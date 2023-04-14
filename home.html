@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@300&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&amp;family=Spectral:wght@700&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Home- Wexer</title>
+</head>
+<body class="bg-home">
+    <header>
+        <nav class="navbar">
+        <div class="container-fluid header-home">
+                <div class="navbar-brand logo-header d-flex  justify-content-center">
+                    <img src="./image/logo-wexer-home.svg" alt="Logo da Wexer em verde" class="align-self-center">
+                </div>
+                <div class="navbar-item">
+                    <div class="dropdown drop-logout me-5">
+                        <button class="btn dropdown-toggle btn-logout" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bem vindo(a),
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li>Admin <br><span>texto aleatorio</span></li>
+                          <li><a class="dropdown-item" href="#">Sair</a></li>
+                      </div>
+                </div>
+            </div>
+    </nav>
+    </header>
+    <main >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="titulo-home">Meus Pacientes</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="container-fluid bg-tabela">
+                        <div class="row">
+                            <div class="col-6 col-sm-12">
+                                <button class="btn-adicionar-paciente" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-circle-plus" ></i> Novo Cadastro</button>
+                            </div>
+                            <div class="col-6 col-sm-12 mt-4">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control filtrar" placeholder="Pesquisar" id="filtrar" >
+                                    <button class="btn btn-outline-secondary btn-filtrar" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i> Filtrar</button>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row mx-4 titulo-tabela mt-5">
+                            <div class="col-2 border text-center">
+                                <h4>Código</h4>
+                            </div>
+                            <div class="col-4 border text-start">
+                                <h4>Nome</h4>
+                            </div>
+                            <div class="col-4 border text-start">
+                                <h4>CPF</h4>
+                            </div>
+                            <div class="col-2 border text-center">
+                                <h4>Ações</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content container-fluid">
+            <div class="modal-body ">
+                <div class="row">
+                    <div class="col-6 text-start">
+                        <h5 class="titulo-modal">Novo Paciente</h5>
+                    </div>
+                    <div class="col-6 text-end">
+                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-closed"><i class="fa-sharp fa-solid fa-circle-xmark "></i></button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-4 tam-form">
+                        <label for="">CPF</label>
+                        <input type="text" name="cpf"  pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})" maxlength="11">
+                    </div>
+                    <div class="col-4 tam-form">
+                        <label for="">Nome</label>
+                        <input type="text" >
+                    </div>
+                    <div class="col-4 tam-form">
+                        <label for="">Data de Nascimento</label>
+                        <input type="date">
+                    </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-4 tam-form">
+                            <label for="">E-mail</label>
+                            <input type="email" >
+                        </div>
+                        <div class="col-4 tam-form">
+                            <label for="">Sexo/Gênero</label>
+                            <select class="form-select " >
+                                <option selected></option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Feminino</option>
+                                <option value="3">Outros</option>
+                              </select>
+                        </div>
+                        <div class="col-4 tam-form">
+                            <label for="">Nacionalidade</label>
+                            <input type="text" >
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-4 tam-form">
+                            <label for="">Naturalidade</label>
+                            <input type="text" >
+                        </div>
+                        <div class="col-4 tam-form">
+                            <label for="">Profissão</label>
+                            <input type="text" >
+                        </div>
+                        <div class="col-4 tam-form">
+                            <label for="">Escolaridade</label>
+                            <input type="text" >
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-4 tam-form">
+                            <label for="">Estado Civil</label>
+                            <select class="form-select " >
+                                <option selected></option>
+                                <option value="1">Solteiro(a)</option>
+                                <option value="2">Casado(a)</option>
+                                <option value="3">Viuvo(a)</option>
+                                <option value="4">Separado(a)</option>
+                                <option value="5">Divorciado(a)</option>
+                              </select>
+                        </div>
+                        <div class="col-4 tam-form">
+                            <label for="">Mãe</label>
+                            <input type="text" >
+                        </div>
+                        <div class="col-4 tam-form">
+                            <label for="">Pai</label>
+                            <input type="text" >
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer me-4">
+              <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" data-bs-dismiss="modal" class="btn btn-criar">Criar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

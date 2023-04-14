@@ -1,0 +1,442 @@
+.body-login{ /*Estilo do background das telas de login e cadastro*/
+    background-image: url("./image-css/logo-back.png");
+    background-repeat: no-repeat;
+    background-color: #E5E5E5;
+ } 
+
+/*Inicio do estilo da tela de login*/
+.login{
+    width: 38rem;
+    height: 38rem;
+    background-color: #017849;
+    justify-items: center;
+    margin-top: 8.125rem;
+    border-radius: 0.938rem;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo-wexer{
+    width: 20.064rem;
+    height: 7.964rem;
+    margin-top: 4.844rem;
+    margin-left: 9.031rem;
+    margin-right: 8.905rem;
+}
+
+.form-login{
+    margin-top: 4.036rem;
+
+}
+.form-login label{
+    margin-left: 7.156rem;
+    color: #ffffff;
+    font-family: 'Roboto';
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.input-login{
+    width: 23.69rem;
+    height: 2.995rem;
+    margin-left: 7.156rem;
+}
+
+.form-login .btn-primary{
+    width: 23.69rem;
+    height: 3rem;
+    border-radius: 0.50rem;
+    border-color: #ffffff;
+    text-align: center;
+    margin-left: 7.156rem;
+    margin-top: 2.031rem;
+    background: #017849;
+    font-family: 'montserrat';
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.form-login button:hover{
+    background: #017849;
+    border-color: #ffffff;
+    filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.1));
+}
+
+.link-cadastro{
+    color: #ffffff;
+    font-family: 'montserrat';
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1.625rem;
+    line-height: 1.35;
+}
+
+/*Final do estilo da tela de login*/
+/*Incio do estilo da tela de cadastro*/
+.cadastro{
+    width: 32.5rem;
+    height: 29.125rem;
+    margin-top: 6rem;
+    background-color: #ffffff;
+    border-radius: 0.938rem;
+}
+.logo-cadastro img{
+    width: 11.362rem;
+    height: 2.516rem;
+    margin-top: 2.688rem;
+    margin-left: 10.56rem;
+    margin-right: 10.563rem;
+    padding: 0;
+}
+
+.titulo-cadastro h2{
+    margin: 0;
+    margin-top: 1.609rem;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.371rem;
+    color: #00995D;
+}
+.titulo-cadastro h3{
+    margin-top: 0.38rem;
+    margin-bottom: 1.625rem;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7rem;
+    color: #00995D;
+}
+
+.form-cadastro label{
+    margin-left: 4.375rem;
+    color: #6F6F6E;
+    font-family: 'Roboto';
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.input-cadastro{
+    width: 23.69rem;
+    height: 2.995rem;
+    margin-left: 4.375rem;
+    border: 1px;
+    border-color: #BDBDBD;
+    border-style: solid;
+    border-radius: 0.50rem;
+}
+
+.form-cadastro .btn-primary{
+    margin-right: 4.375rem;
+    margin-left: 16.063rem;
+    margin-top: 2.188rem;
+    width: 12rem;
+    height: 3rem;
+    background: #00995D;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 0.50rem;
+    border-style: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    
+}
+
+.form-cadastro .fa-arrow-right{
+    margin-left: 0.813rem;
+}
+
+.form-cadastro .btn-primary:hover{
+    background: #017849;
+}
+/*Final do estilo da tela de cadastro*/
+/*Incio do estilo da tela de cadastro da senha*/
+
+.cadastro-senha{
+    width: 32.5rem;
+    height: 33.375rem;
+    background: #ffffff;
+    margin-top: 6.125rem;
+    margin-left: 28.75rem;
+    border-radius: 1rem;
+}
+
+.form-cadastro ul{
+    list-style-type: none;
+    margin-top: 1.145rem;
+    margin-left: 4.375rem;
+    padding: 0;
+}
+
+.form-cadastro span{
+    color: #eb5757;
+}
+
+#btn-senha{
+    margin-top: 0;
+}
+/*Final do estilo da tela de cadastro da senha*/
+/*Inicio do estilo da tela home*/
+
+.header-home{
+    width: 100%;
+    height: 5.063rem;
+    margin: 0;
+    background-color: #ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 0;
+}
+
+.navbar{
+    height: 5rem;
+    padding: 0;
+}
+
+.logo-header{
+    height: 5rem;
+    width: 5rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.logo-header img{
+    height: 44.33px;
+}
+
+.dropdown-menu{
+    width: 200px;
+    margin-right: 20px;
+}
+
+
+.btn-logout{
+    color: #00995D;
+    font-size: 1.5rem;
+}
+.btn-logout:hover{
+    color: #00995D;
+}
+
+.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active{
+    border: 0;
+    color: #00995D;
+}
+
+.titulo-home{
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 27px;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    
+}
+
+.bg-tabela{
+    margin-top: 0.5rem;
+    margin-left: 8rem;
+    width: 100rem;
+    min-height: 34rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+
+.bg-home{
+    background-color: #E5E5E5;
+    height:100%;
+}
+
+.btn-adicionar-paciente{
+    background-color: #017849;
+    border-radius: 30px;
+    width: 12.3rem;
+    height: 3.25rem;
+    color: #ffffff;
+    border-style: none;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+}
+.input-filtrar{
+    width: 504px;
+}
+.filtrar{
+    width: 23.69rem;
+    height: 3rem;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    margin: 0;
+}
+
+.btn-filtrar{
+    width: 7.81rem;
+    height: 3rem;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-style: none;
+    background-color: #00995D;
+    color: #ffffff;
+    margin-right: 24px;
+}
+
+.titulo-tabela h4{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2F80ED;
+    padding: 13px;
+    margin: 0;
+}
+
+.input-group{
+    margin-right: 1.5rem;
+}
+
+.titulo-modal{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 24px;
+    color: #00995D;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tam-form{
+    width: 327px;
+    height: 70px;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tam-form label{
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+    color: #4f4f4f;
+}
+
+.tam-form input{
+    width: 327px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 0.5rem;
+    border: 1px solid #BDBDBD;
+}
+.tam-form select{
+    width: 327px;
+    border: 1px solid #BDBDBD;
+}
+
+.btn-cancelar{
+    background-color: none;
+    border: none;
+    font-size: 16px;
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    color: #616161;
+}
+
+.btn-criar{
+    height: 48px;
+    width: 147px;
+    border-radius: 0.5rem;
+    background-color:#00995D;
+    color: #FFFFFF;
+}
+
+.btn-criar:hover{
+    background-color: #017849;
+    color: #FFFFFF;
+}
+
+.fa-circle-xmark{
+    font-size: 24px;
+    color: #000000;
+    margin-right: 26px;
+    margin-top: 26px;
+}
+
+.btn-closed{
+    border: none;
+    background-color: transparent;
+}
+
+/*Final do estilo da tela de cadastro da senha*/
+/*Inicio do estilo da tela home*/
+
+.header-prontuario{
+
+    flex-direction: column;
+}
+
+.titulo-prontuario{
+    margin-top: 2rem;
+    margin-left: 8.5rem;
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+}
+
+.resumo-paciente{
+    width: 21.25rem;
+    height: 21.88rem;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E0E0E0;
+    border-radius: 0.5rem;
+    margin-left: 138px;
+}
+
+.resumo-paciente h4{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+}
+
+.resumo-paciente h5{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #00995D;
+}
+
+.resumo-paciente span{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #616161;
+    margin-left: 1.25rem;
+}
+
+.resumo-sessao{
+    width: 57.75rem;
+    height: 5rem;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 1.5rem;
+}
+
+.btn-sessao{
+    border: none;
+    background-color: transparent;
+}

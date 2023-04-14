@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@300&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&amp;family=Spectral:wght@700&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Prontuário - Wexer</title>
+</head>
+<body class="bg-home">
+    <header>
+        <div class="container-fluid header-home header-prontuario">
+            <div class="row">
+                <div class="col-2 logo-header d-flex  justify-content-center">
+                    <img src="./image/logo-wexer-home.svg" alt="Logo da Wexer em verde" class="align-self-center">
+                </div>
+                <div class="col ">
+                    <a href="./home.html" class="align-self-center">Voltar para listagem</a>
+                </div>
+                <div class="col ">
+                    <div class="dropdown drop-logout me-5">
+                        <button class="btn dropdown-toggle btn-logout" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bem vindo(a),
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li>Admin <br><span>texto aleatorio</span></li>
+                          <li><a class="dropdown-item" href="#">Sair</a></li>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="titulo-prontuario">Prontuário</h3>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="input-group mb-3 input-filtrar">
+                        <input type="text" class="form-control filtrar" placeholder="Pesquisar" >
+                        <button class="btn btn-outline-secondary btn-filtrar" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i> Filtrar</button>
+                      </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-3 ">
+                    <div class="container resumo-paciente">
+                        <div class="row ms-4 mt-4">
+                            <div class="col">
+                                <h4>Identificação do Paciente</h4>
+                            </div>
+                        </div>
+                        <div class="row ms-4 mt-3">
+                            <div class="col">
+                                <h5><img src="./image/user-line.svg" alt=""> Paciente</h5>
+                                <span>Placeholder Nome</span>
+                            </div>
+                        </div>
+                        <div class="row ms-4 mt-3">
+                            <div class="col">
+                                <h5><img src="./image/calendar-line.svg" alt=""> Nascimento</h5>
+                                <span>Placeholder Nascimento</span>
+                            </div>
+                        </div>
+                        <div class="row ms-4 mt-3">
+                            <div class="col">
+                                <h5><img src="./image/briefcase-4-line.svg" alt=""> Profissão</h5>
+                                <span>Placeholder Profissão</span>
+                            </div>
+                        </div>
+                        <div class="row ms-4 mt-3">
+                            <div class="col">
+                                <h5><img src="./image/book-mark-line.svg" alt=""> Escolaridade</h5>
+                                <span>Placeholder Escolaridade</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container resumo-sessao ">
+                        <div class="row mt-4 ms-5">
+                            <div class="col">
+                                <button class="btn-sessao"><img src="./image/mental-health-fill.svg" alt=""> Sessão</button>
+                            </div>
+                            <div class="col ">
+                                <button class="btn-sessao"><img src="./image/pushpin-fill.svg" alt=""> Fatos Relevantes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
