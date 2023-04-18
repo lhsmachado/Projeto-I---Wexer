@@ -1,5 +1,5 @@
 .body-login{ /*Estilo do background das telas de login e cadastro*/
-    background-image: url("./image-css/logo-back.png");
+    background-image: url("./image-css/logo-bg.svg");
     background-repeat: no-repeat;
     background-color: #E5E5E5;
  } 

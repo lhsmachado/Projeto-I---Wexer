@@ -77,7 +77,7 @@
     
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content container-fluid">
+          <form class="modal-content container-fluid">
             <div class="modal-body ">
                 <div class="row">
                     <div class="col-6 text-start">
@@ -87,57 +87,58 @@
                         <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-closed"><i class="fa-sharp fa-solid fa-circle-xmark "></i></button>
                     </div>
                 </div>
+                <form>
                 <div class="row justify-content-center">
-                    <div class="col-4 tam-form">
+                    <div class="col-4 tam-form" >
                         <label for="">CPF</label>
-                        <input type="text" name="cpf"  pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})" maxlength="11">
+                        <input type="text" name="cpf"  pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})" maxlength="11" id="cpf">
                     </div>
-                    <div class="col-4 tam-form">
+                    <div class="col-4 tam-form" >
                         <label for="">Nome</label>
-                        <input type="text" >
+                        <input type="text" id="nome">
                     </div>
-                    <div class="col-4 tam-form">
+                    <div class="col-4 tam-form" >
                         <label for="">Data de Nascimento</label>
-                        <input type="date">
+                        <input type="date" id="nascimento">
                     </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">E-mail</label>
-                            <input type="email" >
+                            <input type="email" id="email">
                         </div>
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">Sexo/Gênero</label>
-                            <select class="form-select " >
+                            <select class="form-select " id="genero">
                                 <option selected></option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Feminino</option>
                                 <option value="3">Outros</option>
                               </select>
                         </div>
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">Nacionalidade</label>
-                            <input type="text" >
+                            <input type="text" id="nacionalidade">
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">Naturalidade</label>
-                            <input type="text" >
+                            <input type="text" id="naturalidade">
                         </div>
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">Profissão</label>
-                            <input type="text" >
+                            <input type="text" id="profissao">
                         </div>
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">Escolaridade</label>
-                            <input type="text" >
+                            <input type="text" id="escolaridade">
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">Estado Civil</label>
-                            <select class="form-select " >
+                            <select class="form-select " id="relacionamento">
                                 <option selected></option>
                                 <option value="1">Solteiro(a)</option>
                                 <option value="2">Casado(a)</option>
@@ -146,25 +147,26 @@
                                 <option value="5">Divorciado(a)</option>
                               </select>
                         </div>
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">Mãe</label>
-                            <input type="text" >
+                            <input type="text" id="mae">
                         </div>
-                        <div class="col-4 tam-form">
+                        <div class="col-4 tam-form" >
                             <label for="">Pai</label>
-                            <input type="text" >
+                            <input type="text" id="pai">
                         </div>
                     </div>
             </div>
             <div class="modal-footer me-4">
               <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" data-bs-dismiss="modal" class="btn btn-criar">Criar</button>
+              <button type="submit" value="submit" data-bs-dismiss="modal" class="btn btn-criar">Criar</button>
             </div>
+        </form>
           </div>
         </div>
     </div>
     
-    
+        <script src="./js/home.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

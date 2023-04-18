@@ -1,0 +1,6 @@
+{
+    "cadastros": [
+        {"id": 1, "nome": "Luis Teste", "email": "luis@teste", "password": "12345", "pacientes":[]},
+        {"id": 2, "nome": "Charles Teste", "email": "charles@teste", "password": "12345"}
+    ]
+}
