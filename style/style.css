@@ -287,6 +287,11 @@
     margin-right: 24px;
 }
 
+.titulo-tabela{
+    height: 47px;
+}
+
+
 .titulo-tabela h4{
     font-family: 'Montserrat';
     font-style: normal;
@@ -437,6 +442,17 @@
 }
 
 .btn-sessao{
+    border: none;
+    background-color: transparent;
+}
+
+.iconesTabela{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.linhasTabela{
     border: none;
     background-color: transparent;
 }

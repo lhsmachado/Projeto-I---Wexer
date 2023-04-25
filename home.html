@@ -42,10 +42,10 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="container-fluid bg-tabela">
+                    <div class="container-fluid bg-tabela" id="tabela">
                         <div class="row">
                             <div class="col-6 col-sm-12">
-                                <button class="btn-adicionar-paciente" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-circle-plus" ></i> Novo Cadastro</button>
+                                <button class="btn-adicionar-paciente" data-bs-toggle="modal" data-bs-target="#createModal" id="btn-create"><i class="fa-solid fa-circle-plus" ></i> Novo Cadastro</button>
                             </div>
                             <div class="col-6 col-sm-12 mt-4">
                                 <div class="input-group mb-3">
@@ -68,105 +68,131 @@
                                 <h4>Ações</h4>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <form class="modal-content container-fluid">
-            <div class="modal-body ">
-                <div class="row">
-                    <div class="col-6 text-start">
-                        <h5 class="titulo-modal">Novo Paciente</h5>
+
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" >
+            <form class="modal-content container-fluid">
+                <div class="modal-body" id="create-body">
+                    <div class="row" >
+                        <div class="col-6 text-start">
+                            <h5 class="titulo-modal">Novo Paciente</h5>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-closed"><i class="fa-sharp fa-solid fa-circle-xmark "></i></button>
+                        </div>
                     </div>
-                    <div class="col-6 text-end">
-                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-closed"><i class="fa-sharp fa-solid fa-circle-xmark "></i></button>
-                    </div>
+                    <form>
+                    <div class="row justify-content-center">
+                        <div class="col-4 tam-form" >
+                            <label for="">CPF</label>
+                            <input type="text" name="cpf"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14" id="cpf" class="cpf">
+                        </div>
+                        <div class="col-4 tam-form" >
+                            <label for="">Nome</label>
+                            <input type="text" id="nome">
+                        </div>
+                        <div class="col-4 tam-form" >
+                            <label for="">Data de Nascimento</label>
+                            <input type="date" id="nascimento">
+                        </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-4 tam-form" >
+                                <label for="">E-mail</label>
+                                <input type="email" id="email">
+                            </div>
+                            <div class="col-4 tam-form" >
+                                <label for="">Sexo/Gênero</label>
+                                <select class="form-select " id="genero">
+                                    <option selected></option>
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Feminino</option>
+                                    <option value="3">Outros</option>
+                                  </select>
+                            </div>
+                            <div class="col-4 tam-form" >
+                                <label for="">Nacionalidade</label>
+                                <input type="text" id="nacionalidade">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-4 tam-form" >
+                                <label for="">Naturalidade</label>
+                                <input type="text" id="naturalidade">
+                            </div>
+                            <div class="col-4 tam-form" >
+                                <label for="">Profissão</label>
+                                <input type="text" id="profissao">
+                            </div>
+                            <div class="col-4 tam-form" >
+                                <label for="">Escolaridade</label>
+                                <input type="text" id="escolaridade">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-4 tam-form" >
+                                <label for="">Estado Civil</label>
+                                <select class="form-select " id="relacionamento">
+                                    <option selected></option>
+                                    <option value="1">Solteiro(a)</option>
+                                    <option value="2">Casado(a)</option>
+                                    <option value="3">Viuvo(a)</option>
+                                    <option value="4">Separado(a)</option>
+                                    <option value="5">Divorciado(a)</option>
+                                  </select>
+                            </div>
+                            <div class="col-4 tam-form" >
+                                <label for="">Mãe</label>
+                                <input type="text" id="mae">
+                            </div>
+                            <div class="col-4 tam-form" >
+                                <label for="">Pai</label>
+                                <input type="text" id="pai">
+                            </div>
+                        </div>
                 </div>
-                <form>
-                <div class="row justify-content-center">
-                    <div class="col-4 tam-form" >
-                        <label for="">CPF</label>
-                        <input type="text" name="cpf"  pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})" maxlength="11" id="cpf">
-                    </div>
-                    <div class="col-4 tam-form" >
-                        <label for="">Nome</label>
-                        <input type="text" id="nome">
-                    </div>
-                    <div class="col-4 tam-form" >
-                        <label for="">Data de Nascimento</label>
-                        <input type="date" id="nascimento">
-                    </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-4 tam-form" >
-                            <label for="">E-mail</label>
-                            <input type="email" id="email">
-                        </div>
-                        <div class="col-4 tam-form" >
-                            <label for="">Sexo/Gênero</label>
-                            <select class="form-select " id="genero">
-                                <option selected></option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Feminino</option>
-                                <option value="3">Outros</option>
-                              </select>
-                        </div>
-                        <div class="col-4 tam-form" >
-                            <label for="">Nacionalidade</label>
-                            <input type="text" id="nacionalidade">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-4 tam-form" >
-                            <label for="">Naturalidade</label>
-                            <input type="text" id="naturalidade">
-                        </div>
-                        <div class="col-4 tam-form" >
-                            <label for="">Profissão</label>
-                            <input type="text" id="profissao">
-                        </div>
-                        <div class="col-4 tam-form" >
-                            <label for="">Escolaridade</label>
-                            <input type="text" id="escolaridade">
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-4 tam-form" >
-                            <label for="">Estado Civil</label>
-                            <select class="form-select " id="relacionamento">
-                                <option selected></option>
-                                <option value="1">Solteiro(a)</option>
-                                <option value="2">Casado(a)</option>
-                                <option value="3">Viuvo(a)</option>
-                                <option value="4">Separado(a)</option>
-                                <option value="5">Divorciado(a)</option>
-                              </select>
-                        </div>
-                        <div class="col-4 tam-form" >
-                            <label for="">Mãe</label>
-                            <input type="text" id="mae">
-                        </div>
-                        <div class="col-4 tam-form" >
-                            <label for="">Pai</label>
-                            <input type="text" id="pai">
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer me-4">
-              <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" value="submit" data-bs-dismiss="modal" class="btn btn-criar">Criar</button>
-            </div>
-        </form>
-          </div>
+                <div class="modal-footer me-4">
+                  <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="submit" value="submit" data-bs-dismiss="modal" class="btn btn-criar">Criar</button>
+                </div>
+            </form>
         </div>
-    </div>
+        </div>
+        
+        <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" >
+                <form class="modal-content container-fluid">
+                    <div class="modal-body" id="editarBody">
+                       
+                    </div>
+                    <div class="modal-footer me-4">
+                      <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit"  class="btn btn-criar" data-bs-dismiss="modal">Salvar Alteração</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+
+            <div class="modal fade" id="mostrarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" >
+                    <form class="modal-content container-fluid">
+                        <div class="modal-body" id="mostrarBody">
+                           
+                        </div>
+                        
+                    </form>
+                </div>
+                </div>
     
-        <script src="./js/home.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/home.js"></script>
+    
+       
+    
 </body>
 </html>

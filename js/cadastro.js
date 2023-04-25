@@ -7,7 +7,7 @@ document.getElementById("form-cadastro").addEventListener("submit", function(e) 
         alert("Preencha o campo com um email válido.");
         return;
     }
-    saveAccount({
+    cadastroEmail({
         email: email,
         nome: nome
     });
@@ -15,7 +15,8 @@ document.getElementById("form-cadastro").addEventListener("submit", function(e) 
     window.location.href = "cadastro-senha.html";
 });
 
-function saveAccount(data){
-    localStorage.setItem(data.login, JSON.stringify(data));
+function cadastroEmail(data){
+
+    sessionStorage.setItem("cadastro", JSON.stringify(data));
 
 }

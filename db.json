@@ -1,6 +1,87 @@
 {
-    "cadastros": [
-        {"id": 1, "nome": "Luis Teste", "email": "luis@teste", "password": "12345", "pacientes":[]},
-        {"id": 2, "nome": "Charles Teste", "email": "charles@teste", "password": "12345"}
-    ]
+  "cadastros": [
+    {
+      "id": 1,
+      "nome": "Luis Teste",
+      "email": "luis@teste",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "nome": "Charles Teste",
+      "email": "charles@teste",
+      "password": "12345"
+    },
+    {
+      "nome": "Juliana",
+      "email": "juliana@teste",
+      "senha": "123456",
+      "id": 3
+    }
+  ],
+  "pacientes": [
+    {
+      "id": "1",
+      "cpf": "00000000000",
+      "nome": "Jefinho",
+      "nascimento": "5595-09-25",
+      "email": "jeferson@teste",
+      "genero": "1",
+      "nacionalidade": "Brasileira",
+      "naturalidade": "parobé",
+      "profissao": "professor",
+      "escolaridade": "Superior Incompleto",
+      "relacionamento": "2",
+      "mae": "não lembro",
+      "pai": "josé",
+      "idPsicologo": 1
+    },
+    {
+      "id": "2",
+      "cpf": "541.564.654-56",
+      "nome": "dadadas",
+      "nascimento": "",
+      "email": "",
+      "genero": "",
+      "nacionalidade": "",
+      "naturalidade": "",
+      "profissao": "",
+      "escolaridade": "",
+      "relacionamento": "",
+      "mae": "",
+      "pai": "",
+      "idPsicologo": "2"
+    },
+    {
+      "id": "191691",
+      "cpf": "654.646.548-46",
+      "nome": "Teste novidades",
+      "nascimento": "",
+      "email": "",
+      "genero": "",
+      "nacionalidade": "",
+      "naturalidade": "",
+      "profissao": "",
+      "escolaridade": "",
+      "relacionamento": "",
+      "mae": "",
+      "pai": ""
+    },
+    {
+      "id": "196861",
+      "cpf": "518.515.315-31",
+      "nome": "teste 1",
+      "nascimento": "",
+      "email": "",
+      "genero": "",
+      "nacionalidade": "",
+      "naturalidade": "",
+      "profissao": "",
+      "escolaridade": "",
+      "relacionamento": "",
+      "mae": "",
+      "pai": "",
+      "idPsicologo": 1
+    }
+  ]
 }

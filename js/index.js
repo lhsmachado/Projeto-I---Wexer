@@ -18,12 +18,12 @@ console.log(veremail)
 
 const verificaemail = veremail[0].email;
 const verificasenha = veremail[0].password;
-console.log(verificaemail)
+const id = veremail[0].id
 
 
 if(verificaemail === email){
     if(verificasenha === password){
-        const userserializado = JSON.stringify(veremail)
+        const userserializado = JSON.stringify(id)
         sessionStorage.setItem("logged", userserializado);
         window.location.href = "home.html"
     }
