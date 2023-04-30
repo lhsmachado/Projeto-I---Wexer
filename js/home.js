@@ -14,6 +14,12 @@ function gerarId(idUser) {
   return id;
 }
 
+const getUser = async (id) =>{
+  const response = await fetch(`http://localhost:3000/cadastros?id=`+ id); 
+  const user = response.json();
+  return(user);
+  console.log(user)
+}
 
 const getPacientes = async () =>{
   try {
@@ -49,8 +55,6 @@ const getPacientes = async () =>{
 })
 
 
-
-
 document.getElementById('cpf').addEventListener('input', function (event) {
   let cpf = event.target.value;
   cpf = cpf.replace(/\D/g, ''); 
@@ -82,7 +86,6 @@ document.getElementById('cpf').addEventListener('input', function (event) {
     }
 
   const attPaciente = async (dados) => {
-    console.log(user)
       await fetch(`http://localhost:3000/pacientes/${idEditar}` , {
         method: 'PUT',
         headers: {
@@ -221,31 +224,31 @@ document.getElementById('cpf').addEventListener('input', function (event) {
 
     const pacientes = await getPacientes();
     const tabela = document.getElementById("tabela");
+    
 
     for (let i = 0; i < pacientes.length; i++) {
 
       const dadosTabela = 
         `<div class="row mx-4 titulo-tabela" id="linha-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#mostrarModal">
-          <div class="col-2 border text-center">
+          <div class="col-sm-2  border text-center">
               <span>${pacientes[i].id}</span>
           </div>
-          <div class="col-4 border text-start">
+          <div class="col-sm-4  border text-start">
               <span>${pacientes[i].nome}</span>
           </div>
-          <div class="col-4 border text-start">
+          <div class="col-sm-4  border text-start">
               <span>${pacientes[i].cpf}</span>
           </div>
-          <div class="col-2 d-flex border justify-content-center align-content-center p-0">
-              <div class="row">
-                  <div class="col align-self-center">
+          <div class="col-sm-2  d-flex border justify-content-center  p-0">
+              <div class="row d-flex align-items-center">
+                  
                       <a href="./prontuario.html?id=${pacientes[i].id}" class="iconesTabela" ><img src="./image/prontuario-icon.svg" alt="" ></a>
-                  </div>
-                  <div class="col align-self-center">
-                      <button class="iconesTabela" id="editar-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#editarModal"><img src="./image/editar-icon.svg" alt=""></button>
-                  </div>
-                  <div class="col align-self-center">
-                      <button class="iconesTabela" id="deletePaciente"><img src="./image/delete-icon.svg" alt="" ></button>
-                  </div>
+                  
+                      <button class="iconesTabela ms-2" id="editar-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#editarModal"><img src="./image/editar-icon.svg" alt=""></button>
+                  
+                  
+                      <button class="iconesTabela ms-2" id="deletePaciente"><img src="./image/delete-icon.svg" alt="" ></button>
+                  
               </div>
           </div>
         </div>`
@@ -253,12 +256,24 @@ document.getElementById('cpf').addEventListener('input', function (event) {
       tabela.innerHTML += dadosTabela
 
     };
+    tabela.innerHTML += `<div class="row p-5"></div>`
     adicionarEventosDeClique();
   }
+  const attHeader = async()=>{
+    const user = await getUser(idUser);
+
+    const nomeCompleto = user[0].nome
+    const nome = nomeCompleto.split(' ')[0]
+    document.getElementById("nomeUser").textContent = nome
+
+    const email = user[0].email
+    document.getElementById('emailUser').textContent = email
+
+    };
 
   addTabela();
+  attHeader();
   
-
   const mostrarPaciente = async (id) => {
     
     const response =  await fetch(`http://localhost:3000/pacientes?id=`+ id); 

@@ -82,6 +82,44 @@
       "mae": "",
       "pai": "",
       "idPsicologo": 1
+    },
+    {
+      "id": "null07027",
+      "cpf": "",
+      "nome": "",
+      "nascimento": "",
+      "email": "",
+      "genero": "",
+      "nacionalidade": "",
+      "naturalidade": "",
+      "profissao": "",
+      "escolaridade": "",
+      "relacionamento": "",
+      "mae": "",
+      "pai": "",
+      "idPsicologo": null
+    }
+  ],
+  "prontuario": [
+    {
+      "data": "4564654",
+      "inicio": "564654",
+      "fim": "654654",
+      "titulo": "56465465",
+      "resumo": "54654654",
+      "valor": "564564",
+      "pagamento": "1",
+      "tipo": "sessao",
+      "id": 1,
+      "paciente": 1
+    },
+    {
+      "data": "20/12/2022",
+      "titulo": "socorro",
+      "ocorrido": "cliente se matou",
+      "tipo": "fato",
+      "id": 2,
+      "paciente": 1
     }
   ]
 }

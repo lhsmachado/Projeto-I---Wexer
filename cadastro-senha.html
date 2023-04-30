@@ -12,30 +12,34 @@
     <title>Cadastro de Senha - Wexer</title>
 </head>
 <body class="d-flex body-login">
-    <div class="container cadastro-senha">
-        <div class="row logo-cadastro d-flex">
+    <div class="container-fluid cadastro-senha">
+        <div class="row logo-cadastro d-flex justify-content-center">
             <img src="./image/logo-test.svg" alt="Logo da Wexer na tela de cadastro">
         </div>
         <div class="row titulo-cadastro">
             <h2>Seja bem-vindo(a)!</h2>
             <h3>Escolha uma senha</h3>
         </div>
-        <div class="row">
+        <div class="row form-center-cadastro">
             <form class="form-cadastro" id="form-cadastro">
-                <div class="mb-3 ">
-                  <label for="casdastro-senha" class="form-label">Senha</label>
+                <div class="row d-flex mb-3 ">
+                  <label for="casdastro-senha" class="form-label p-0">Senha</label>
                   <input type="password" class="form-control input-cadastro" id="cadastro-senha" required>
                 </div>
-                <div >
-                    <label for="cadastro-senha-repeat" class="form-label">Confirmar senha</label>
+                <div class="row d-flex">
+                    <label for="cadastro-senha-repeat" class="form-label p-0">Confirmar senha</label>
                     <input type="password" class="form-control input-cadastro" id="cadastro-senha-repeat"  required>
                   </div>
+                  <div class="row d-flex mt-3">
                 <ul>
                     <li><span>*</span>Precisa no mínimo 8 digitos</li>
                     <li><span>*</span>Precisa conter um caractere especial */+.</li>
                     <li><span>*</span>Precisa conter uma letra em MAIÚSCULA</li>
                 </ul>
-                <button type="submit" class="btn btn-primary" id="btn-senha">Prosseguir <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+                <div class="row justify-content-end">
+                    <button type="submit" class="btn btn-primary mb-5" id="btn-senha">Prosseguir <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
               </form>
         </div>
     </div>

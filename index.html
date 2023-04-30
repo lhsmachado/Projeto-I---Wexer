@@ -12,29 +12,37 @@
 </head>
 <body class="d-flex body-login">
      
-    <div class="container login">
-        <div class="col ">
-            <div class="row ">
-                <img src="./image/logo-wexer.png" alt="Logo Wexer" class="logo-wexer ">
-            </div>
-            <div class="row ">
-                <form class="form-login" id="form-login">
-                    <div class="mb-3 ">
-                      <label for="login-email" class="form-label">Login</label>
-                      <input type="email" class="form-control input-login" id="email-input" placeholder="daniel.silva@wexer.com.br" required>
-                    </div>
-                    <div>
-                      <label for="login-password" class="form-label">Senha</label>
-                      <input type="password" class="form-control input-login" id="password-input" placeholder="*****************" required>
-                    </div>
+    <div class="container-fluid login">
+        <div class="col">
+          <div class="row d-flex justify-content-center">
+            <img src="./image/logo-test.svg" alt="Logo Wexer" class="logo-wexer">
+          </div>
+          <div class="row d-flex justify-content-center form-center">
+            <form class="form-login " id="form-login">
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="col p-0">
+                  <label for="login-email" class="form-label">Login</label>
+                  <input type="email" class="form-control input-login" id="email-input" placeholder="daniel.silva@wexer.com.br" required>
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col p-0">
+                  <label for="login-password" class="">Senha</label>
+                  <input type="password" class="form-control input-login" id="password-input" placeholder="*****************" required>
+                </div>
+                </div>
+                <div class="row justify-content-center">
                     <button type="submit" class="btn btn-primary">Entrar</button>
-                  </form>
-            </div>
+                </div>
+              </form>
         </div>
-        <div class="row ">
-            <a href="./cadastro.html" class="link-cadastro">Cadastre-se gratuitamente</a>
         </div>
-    </div>
+        <div class="row mb-5">
+          <a href="./cadastro.html" class="link-cadastro">Cadastre-se gratuitamente</a>
+        </div>
+      </div>
+      
+      
     <script src="./js/index.js"></script>
 </body>
 </html>

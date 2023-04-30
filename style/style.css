@@ -6,29 +6,29 @@
 
 /*Inicio do estilo da tela de login*/
 .login{
-    width: 38rem;
-    height: 38rem;
+    max-width: 38rem;
+    max-height: 38rem;
     background-color: #017849;
-    justify-items: center;
     margin-top: 8.125rem;
     border-radius: 0.938rem;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .logo-wexer{
-    width: 20.064rem;
+    max-width: 20.064rem;
     height: 7.964rem;
     margin-top: 4.844rem;
-    margin-left: 9.031rem;
-    margin-right: 8.905rem;
-}
 
+}
+.form-center{
+    margin-left: 20%;
+    margin-right: 20%;
+}
 .form-login{
     margin-top: 4.036rem;
 
 }
 .form-login label{
-    margin-left: 7.156rem;
     color: #ffffff;
     font-family: 'Roboto';
     margin-bottom: 0;
@@ -36,19 +36,20 @@
     font-weight: 400;
 }
 
+
 .input-login{
-    width: 23.69rem;
-    height: 2.995rem;
-    margin-left: 7.156rem;
+max-width: 23.69rem; 
+height: 2.995rem;
+
 }
 
 .form-login .btn-primary{
-    width: 23.69rem;
+    max-width: 23.69rem;
     height: 3rem;
     border-radius: 0.50rem;
     border-color: #ffffff;
     text-align: center;
-    margin-left: 7.156rem;
+    /* margin-left: 7.156rem; */
     margin-top: 2.031rem;
     background: #017849;
     font-family: 'montserrat';
@@ -76,8 +77,8 @@
 /*Final do estilo da tela de login*/
 /*Incio do estilo da tela de cadastro*/
 .cadastro{
-    width: 32.5rem;
-    height: 29.125rem;
+    max-width: 32.5rem;
+    max-height: 29.125rem;
     margin-top: 6rem;
     background-color: #ffffff;
     border-radius: 0.938rem;
@@ -86,11 +87,13 @@
     width: 11.362rem;
     height: 2.516rem;
     margin-top: 2.688rem;
-    margin-left: 10.56rem;
-    margin-right: 10.563rem;
     padding: 0;
 }
 
+.form-center-cadastro{
+    margin-left: 13%;
+    margin-right: 13%;
+}
 .titulo-cadastro h2{
     margin: 0;
     margin-top: 1.609rem;
@@ -113,7 +116,7 @@
 }
 
 .form-cadastro label{
-    margin-left: 4.375rem;
+    /* margin-left: 13.5%; */
     color: #6F6F6E;
     font-family: 'Roboto';
     margin-bottom: 0;
@@ -122,9 +125,10 @@
 }
 
 .input-cadastro{
-    width: 23.69rem;
+    max-width: 23.69rem;
     height: 2.995rem;
-    margin-left: 4.375rem;
+    /* margin-left: 13.5%; */
+    /* margin-right: 13.5%; */
     border: 1px;
     border-color: #BDBDBD;
     border-style: solid;
@@ -132,8 +136,8 @@
 }
 
 .form-cadastro .btn-primary{
-    margin-right: 4.375rem;
-    margin-left: 16.063rem;
+    /* margin-right: 13.5%; */
+    /* margin-left: 16.063rem; */
     margin-top: 2.188rem;
     width: 12rem;
     height: 3rem;
@@ -160,19 +164,21 @@
 /*Incio do estilo da tela de cadastro da senha*/
 
 .cadastro-senha{
-    width: 32.5rem;
-    height: 33.375rem;
+    max-width: 32.5rem;
+    max-height: 33.375rem;
     background: #ffffff;
     margin-top: 6.125rem;
-    margin-left: 28.75rem;
+   
     border-radius: 1rem;
 }
 
 .form-cadastro ul{
     list-style-type: none;
-    margin-top: 1.145rem;
-    margin-left: 4.375rem;
+    /* margin-top: 1.145rem; */
+    /* margin-left: 4.375rem; */
     padding: 0;
+    font-size: 14px;
+    font-family: 'montserrat';
 }
 
 .form-cadastro span{
@@ -212,10 +218,36 @@
 }
 
 .dropdown-menu{
-    width: 200px;
+    width: 279px;
+    height: 124px;
     margin-right: 20px;
+    border-radius: 16px;
+    font-family: 'confortaa';
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
 }
 
+.btn-sair{
+    height:auto;
+    width: 100%;
+    border-radius: 16px;
+}
+.btn-sair:hover{
+    background-color: #FFFFFF;
+}
+.vw-email{
+    background: linear-gradient(358.25deg, rgba(229, 229, 229, 0.68) 19.64%, #FFFFFF 75.78%);
+    height: 58px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    padding-left: 15px;
+}
+
+#emailUser{
+    font-size: 12px;
+    font-family: 'montserrat';
+}
 
 .btn-logout{
     color: #00995D;
@@ -237,22 +269,20 @@
     font-weight: 400;
     line-height: 27px;
     margin-top: 1rem;
-    margin-left: 8rem;
+    margin-left: 8%;
     
 }
 
 .bg-tabela{
-    margin-top: 0.5rem;
-    margin-left: 8rem;
-    width: 100rem;
-    min-height: 34rem;
+    max-width: 100rem;
     background-color: #ffffff;
     border-radius: 1rem;
 }
 
 .bg-home{
     background-color: #E5E5E5;
-    height:100%;
+    height:auto;
+    width: auto;
 }
 
 .btn-adicionar-paciente{
@@ -266,7 +296,7 @@
     margin-left: 1.5rem;
 }
 .input-filtrar{
-    width: 504px;
+    max-width: 504px;
 }
 .filtrar{
     width: 23.69rem;
@@ -402,7 +432,6 @@
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border: 1px solid #E0E0E0;
     border-radius: 0.5rem;
-    margin-left: 138px;
 }
 
 .resumo-paciente h4{
@@ -431,28 +460,84 @@
     margin-left: 1.25rem;
 }
 
-.resumo-sessao{
-    width: 57.75rem;
+ .resumo-sessao{
+    width: 100%;
     height: 5rem;
     background-color: #FFFFFF;
     border: 1px solid #E0E0E0;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin-left: 1.5rem;
-}
+    /* margin-left: 1.5rem; */
+    margin-right: 6%;
+} 
 
 .btn-sessao{
     border: none;
     background-color: transparent;
+
 }
 
 .iconesTabela{
     padding: 0;
     border: none;
     background-color: transparent;
+    max-width: 32px;
+    max-height: 24px;
 }
 
 .linhasTabela{
     border: none;
     background-color: transparent;
+}
+
+/*Final do estilo da tela home*/
+/*Inicio do estilo da tela de prontuario*/
+
+
+.titulo-sessao{
+    font-family: 'montserrat';
+    font-size: 18px;
+    font-weight: 500;
+    color: #212121;
+    display: flex;
+    
+}
+
+.modalProntuario{
+    width: 640px;
+}
+
+.inputSessao{
+    width: 11rem;
+
+}
+
+
+.cardProntuario{
+    width: auto;
+    min-height: 210px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid ;
+    margin-right: 6%;
+}
+
+.imgProntuario{
+    height: 48px;
+    margin-left: 24px;
+    margin-top: -24px;
+}
+
+.moreBtn{
+    border: none;
+    background-color: transparent;
+    font-size: 36px;
+    text-align: center;
+    margin-top: -25px;
+}
+
+.vertical-line {
+    border-left: 3px solid #000; 
+    height: 2.5rem; 
+    margin-left: 73px; 
 }

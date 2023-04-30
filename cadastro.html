@@ -12,28 +12,35 @@
     <title>Cadastro - Wexer</title>
 </head>
 <body class="d-flex body-login">
-    <div class="container cadastro">
-        <div class="row logo-cadastro d-flex">
+    <div class="container-fluid cadastro">
+        <div class="row logo-cadastro d-flex justify-content-center">
             <img src="./image/logo-test.svg" alt="Logo da Wexer na tela de cadastro">
         </div>
         <div class="row titulo-cadastro">
             <h2>Seja bem-vindo(a)!</h2>
             <h3>Preencha os campos para se cadastrar</h3>
         </div>
-        <div class="row">
+        <div class="row d-flex form-center-cadastro">
+            
             <form class="form-cadastro" id="form-cadastro">
-                <div class="mb-3 ">
+                <div class="row mb-3 d-flex">
+                    <div class="col p-0">
                   <label for="casdastro-nome" class="form-label">Nome</label>
                   <input type="text" class="form-control input-cadastro" id="cadastro-nome" placeholder="Daniel Silva" required>
                 </div>
-                <div >
+            </div>
+                <div class="row d-flex">
+                    <div class="col p-0">
                     <label for="cadastro-email" class="form-label">E-mail</label>
                     <input type="email" class="form-control input-cadastro" id="cadastro-email" placeholder="daniel.silva@wexer.com.br" required>
                   </div>
-                  <button type="submit" class="btn btn-primary">
+                </div>
+                <div class="row justify-content-end">
+                  <button type="submit" class="btn btn-primary mb-5">
                     Prosseguir <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
               </form>
-             
+            
         </div>
     </div>
 <script src="./js/cadastro.js"></script>
