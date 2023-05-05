@@ -14,44 +14,48 @@
     <title>Prontuário - Wexer</title>
 </head>
 <body class="bg-home">
-    <header>
-        <div class="container-fluid header-home header-prontuario">
-            <div class="row">
-                <div class="col-2 logo-header d-flex  justify-content-center">
+    <header id="header">
+        <nav class="navbar navbar-expand-lg header-home d-flex">
+        
+                <div class="navbar-brand logo-header d-flex  justify-content-center">
                     <img src="./image/logo-wexer-home.svg" alt="Logo da Wexer em verde" class="align-self-center">
                 </div>
-                <div class="col ">
-                    <a href="./home.html" class="align-self-center">Voltar para listagem</a>
+                <div class="d-flex justify-self-start">
+                    <a href="./home.html" class="ancora-prontuario">Voltar a listagem</a>
                 </div>
-                <div class="col ">
+                <div class="collapse navbar-collapse d-flex flex-row-reverse">
                     <div class="dropdown drop-logout me-5">
                         <button class="btn dropdown-toggle btn-logout" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Bem vindo(a),
+                            Bem vindo(a), <span id="nomeUser"></span>
                         </button>
+                        
                         <ul class="dropdown-menu">
-                          <li>Admin <br><span>texto aleatorio</span></li>
-                          <li><a class="dropdown-item" href="#">Sair</a></li>
+                            
+                          <li class="vw-email">Admin <br><span id="emailUser"></span></li>
+                          <li><button class="dropdown-item text-center btn-sair p-3">Sair</button></li>
+                          </ul>
                       </div>
                 </div>
-            </div>
-        </div>
+            
+    </nav>
+    </header>
     </header>
     <main>
-        <div class="container-fluid d-flex flex-column">
+        <div class="container-fluid d-flex flex-column mb-5  p-0">
             <div class="row">
-                <div class="col-md-6 col-12">
+                <div class="col-md-6 col-12 ps-0">
                     <h3 class="titulo-prontuario">Prontuário</h3>
                 </div>
-                <div class="col-md-6 col-12 mt-4">
-                    <div class="input-group mb-3 input-filtrar">
-                        <input type="text" class="form-control filtrar" placeholder="Pesquisar" >
-                        <button class="btn btn-outline-secondary btn-filtrar" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i> Filtrar</button>
-                      </div>
+                <div class="col-md-6 col-12 ps-0 ">
+                    <form class="d-flex pesquisar-prontuario pesquisar justify-content-end " role="search">
+                    <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass m-1"></i>Filtrar</button>
+                    </form>
                 </div>
             </div>
             <div class="row mt-5 d-flex">
-                <div class="col-md-4 col-12 p-0" >
-                    <div class="container-fluid resumo-paciente">
+                <div class="col-md-3 col-12 p-0" >
+                    <div class="container-fluid resumo-paciente ">
                         <div class="row ms-4 mt-4">
                             <div class="col">
                                 <h4>Identificação do Paciente</h4>
@@ -84,18 +88,19 @@
                     </div>
                 </div>
                 <div class="col-md-8  col-12 p-0 d-flex" >
-                    <div class="container-fluid ">
-                        <div class="row mt-4">
+                    <div class="container-fluid me-5">
+                        <div class="row ">
                            <div class="col-12 resumo-sessao">
                             <div class="row align-items-center">
-                            <div class="col d-flex justify-content-center ">
-                                <button class="btn-sessao "  data-bs-toggle="modal" data-bs-target="#sessaoModal"><img src="./image/mental-health-fill.svg" alt=""> Sessão</button>
+                            <div class="col d-flex justify-content-center mt-4">
+                                <button class="btn-sessao align-items-center"  data-bs-toggle="modal" data-bs-target="#sessaoModal"><img src="./image/mental-health-fill.svg" alt=""> Sessão</button>
                             </div>
-                            <div class="col">
+                            <div class="col  d-flex justify-content-center mt-4">
                                 <button class="btn-sessao" data-bs-toggle="modal" data-bs-target="#fatoModal"><img src="./image/pushpin-fill.svg" alt=""> Fatos Relevantes</button>
                             </div>
                         </div>
                         </div>
+                        
                         </div>
                         <div class="row mt-3">
                             <div class="col ">
@@ -116,7 +121,9 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="row d-flex text-center mt-5">
+                <a href="#header" class="voltar"><img src="./image/arrowhead-up.svg" alt="">Voltar para o topo</a>
+            </div>
         </div>
     </main>
     <!-- Modal Sessão -->
@@ -134,63 +141,63 @@
             </div>
             <div class="container-fluid">
             <div class="row">
-                <div class="col-12 d-flex p-0">
+                <div class="col-12 d-flex p-0 mb-3">
                     <img src="./image/1.svg" alt="">
-                    <h2 class="titulo-sessao align-self-center " >Dados Gerais</h2>
+                    <h2 class="titulo-sessao align-self-center mt-2 ms-2" >Dados Gerais</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 me-3 p-0 inputSessao">
-                    <label for="">Data*</label>
-                    <input type="text" id="dataSessao" >
+                    <label for="" class="textFato">Data*</label>
+                    <input type="text" id="dataSessao" class="border-modal">
                 </div>
                 <div class="col-4 me-3 p-0 inputSessao">
-                    <label for="">Hora de inicio*</label>
-                    <input type="text" id="inicioSessao" >
+                    <label for="" class="textFato">Hora de inicio*</label>
+                    <input type="text" id="inicioSessao" class="border-modal">
                 </div>
                 <div class="col-4 me-3 p-0 inputSessao">
-                    <label for="">Hora fim*</label>
-                    <input type="text" id="fimSessao" >
+                    <label for="" class="textFato">Hora fim*</label>
+                    <input type="text" id="fimSessao" class="border-modal">
                 </div>
             </div>
             <hr style="margin-top:23px;margin-bottom:23px;">
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 d-flex p-0">
+                <div class="col-12 d-flex p-0 mb-3">
                     <img src="./image/2.svg" alt="">
-                    <h2 class="titulo-sessao align-self-center" >Sessão</h2>
+                    <h2 class="titulo-sessao align-self-center mt-2 ms-2" >Sessão</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">                    
-                    <label for="tituloSessao">Titulo*</label>
-                    <input type="text" placeholder="Digite o titulo da sessão" id="tituloSessao" style="width: 100%;">
+                    <label for="tituloSessao" class="textFato">Titulo*</label>
+                    <input type="text" placeholder="Digite o titulo da sessão" id="tituloSessao" style="width: 100%;" class="border-modal">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <label for="">Resumo da sessão*</label>
-                    <input type="text" placeholder="Digite o resumo da sessão" id="resumoSessao" style="height: 10rem; width: 100%;">
+                    <label for="" class="textFato">Resumo da sessão*</label>
+                    <input type="text" placeholder="Digite o resumo da sessão" id="resumoSessao" style="height: 10rem; width: 100%;" class="border-modal">
                 </div>
             </div>
             <hr style="margin-top:23px;margin-bottom:23px;">
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 d-flex p-0">
+                <div class="col-12 d-flex p-0 mb-3">
                     <img src="./image/3.svg" alt="">
-                    <h2 class="titulo-sessao align-self-center" >Pagamento</h2>
+                    <h2 class="titulo-sessao align-self-center mt-2 ms-2" >Pagamento</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4">
-                    <label for="">Valor</label>
-                    <input type="text" id="valorSessao">
+                    <label for="" class="textFato">Valor </label>
+                    <input type="text" id="valorSessao" class="border-modal">
                 </div>
                 <div class="col-4">
-                    <label for="">Forma de pagamento</label>
-                    <select class="form-select " id="pagamentoSessao">
+                    <label for="" class="textFato">Forma de pagamento</label>
+                    <select class="form-select border-modal" id="pagamentoSessao">
                         <option selected></option>
                         <option value="1">Pix</option>
                         <option value="2">Dinheiro</option>
@@ -198,14 +205,17 @@
                       </select>
                 </div>
                 <div class="col-4">
-                    <div class="form-check form-check-inline" id="acertoSessao">
+                    <label for=""class="textFato">Status</label>
+                    <div class="mt-2" style="width:200px">
+                    <div class="form-check form-check-inline" id="acertoSessao" >
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                         <label class="form-check-label" for="inlineRadio1">Pago</label>
                       </div>
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
                         <label class="form-check-label" for="inlineRadio2">Não pago</label>
-                      </div>                    
+                      </div>  
+                    </div>                  
                 </div>
             </div>
         </div>
@@ -224,7 +234,7 @@
             <div class="modal-body container-fluid">
                 <div class="row">
                    <div class="col-6 text-start">
-                        <h1 class="modal-title titulo-modal" id="exampleModalLabel">Novo Fato Relevante</h1>
+                        <h1 class="modal-title titulo-modal">Novo Fato Relevante</h1>
                     </div>
                     <div class="col-6 text-end">
                         <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn-closed"><i class="fa-sharp fa-solid fa-circle-xmark "></i></button>
@@ -232,17 +242,17 @@
                 </div>
                 <div class="row mt-4">
                     <div class="col-4">
-                        <label for="">Data*</label>
+                        <label for="" class="textFato">Data*</label>
                         <input type="text" placeholder="24/01/2023" id="dataFato">
                     </div>
                     <div class="col-8">
-                        <label for="">Título*</label>
+                        <label for="" class="textFato">Título*</label>
                         <input type="text" placeholder="Digite" id="tituloFato">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <label for="">Descrição*</label>
+                        <label for="" class="textFato mt-3">Descrição*</label>
                         <input type="text" id="ocorridoFato">
                     </div>
                 </div>

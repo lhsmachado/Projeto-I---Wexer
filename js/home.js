@@ -31,6 +31,16 @@ const getPacientes = async () =>{
     console.error("Erro ao recuperar os dados do cadastro:", error);
 }}
 
+const getPacientesFilter = async (data) =>{
+  try {
+    const response = await fetch(`http://localhost:3000/pacientes?q=`+ data);
+    const pacientes = await response.json();
+    return(pacientes);
+        
+  } catch (error) {
+    console.error("Erro ao recuperar os dados do cadastro:", error);
+}}
+
   document.getElementById("createModal").addEventListener("submit", async function(e) {
     e.preventDefault();
     
@@ -395,3 +405,73 @@ document.getElementById('cpf').addEventListener('input', function (event) {
     attPaciente(atualizaPaciente)
     
   })
+
+ const  pesquisar = async () => {
+    
+    const pesquisa = document.getElementById("pesquisar-home-input").value
+    const pacientes = await getPacientesFilter(pesquisa)
+    const tabela = document.getElementById("tabela");
+
+    if(pesquisa === ' '){
+      window.reload.location
+    }
+
+    tabela.innerHTML = ` <div class="row">
+    <div class="col-12 col-sm-6">
+        <button class="btn-adicionar-paciente" data-bs-toggle="modal" data-bs-target="#createModal" id="btn-create"><i class="fa-solid fa-circle-plus" ></i> Novo Cadastro</button>
+    </div>
+    <div class="col-12 col-sm-6 mt-4">
+        <form class="d-flex pesquisar justify-content-end me-4" role="search" >
+            <input class="form-control" type="text" placeholder="Pesquisar" id="pesquisar-home-input">
+            <button class="btn btn-outline-success" type="button" onclick="pesquisar()"><i class="fa-solid fa-magnifying-glass m-1"></i>Filtrar</button>
+        </form>
+    </div>
+</div>
+
+<div class="row d-flex mx-4 titulo-tabela mt-5">
+    <div class="col-sm-2 border text-center">
+        <h4>Código</h4>
+    </div>
+    <div class="col-sm-4 col-12 border text-start">
+        <h4>Nome</h4>
+    </div>
+    <div class="col-sm-4 col-12 border text-start">
+        <h4>CPF</h4>
+    </div>
+    <div class="col-sm-2 col-12 border text-center">
+        <h4>Ações</h4>
+    </div>
+</div>`
+for (let i = 0; i < pacientes.length; i++) {
+
+  const dadosTabela = 
+    `<div class="row mx-4 titulo-tabela" id="linha-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#mostrarModal">
+      <div class="col-sm-2  border text-center">
+          <span>${pacientes[i].id}</span>
+      </div>
+      <div class="col-sm-4  border text-start">
+          <span>${pacientes[i].nome}</span>
+      </div>
+      <div class="col-sm-4  border text-start">
+          <span>${pacientes[i].cpf}</span>
+      </div>
+      <div class="col-sm-2  d-flex border justify-content-center  p-0">
+          <div class="row d-flex align-items-center">
+              
+                  <a href="./prontuario.html?id=${pacientes[i].id}" class="iconesTabela" ><img src="./image/prontuario-icon.svg" alt="" ></a>
+              
+                  <button class="iconesTabela ms-2" id="editar-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#editarModal"><img src="./image/editar-icon.svg" alt=""></button>
+              
+              
+                  <button class="iconesTabela ms-2" id="deletePaciente"><img src="./image/delete-icon.svg" alt="" ></button>
+              
+          </div>
+      </div>
+    </div>`
+
+  tabela.innerHTML += dadosTabela
+  adicionarEventosDeClique();
+};
+tabela.innerHTML += `<div class="row p-5"></div>`
+
+  }

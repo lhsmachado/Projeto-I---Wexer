@@ -226,6 +226,7 @@ height: 2.995rem;
     font-size: 14px;
     font-weight: 400;
     color: #000000;
+    z-index: 99999;
 }
 
 .btn-sair{
@@ -297,6 +298,8 @@ height: 2.995rem;
 }
 .input-filtrar{
     max-width: 504px;
+    margin-right: 100px;
+
 }
 .filtrar{
     width: 23.69rem;
@@ -335,6 +338,7 @@ height: 2.995rem;
 
 .input-group{
     margin-right: 1.5rem;
+    z-index: 0;
 }
 
 .titulo-modal{
@@ -417,7 +421,7 @@ height: 2.995rem;
 
 .titulo-prontuario{
     margin-top: 2rem;
-    margin-left: 8.5rem;
+    margin-left: 100px;
     font-family: 'Comfortaa';
     font-style: normal;
     font-weight: 400;
@@ -428,6 +432,7 @@ height: 2.995rem;
 .resumo-paciente{
     width: 21.25rem;
     height: 21.88rem;
+    margin-left: 100px;
     background-color: #FFFFFF;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border: 1px solid #E0E0E0;
@@ -467,14 +472,17 @@ height: 2.995rem;
     border: 1px solid #E0E0E0;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    /* margin-left: 1.5rem; */
     margin-right: 6%;
 } 
 
 .btn-sessao{
     border: none;
     background-color: transparent;
-
+    font-family: 'monteserrat';
+    font-size: 16px;
+    line-height: 20px;
+    color: #616161;
+    font-weight: 700;
 }
 
 .iconesTabela{
@@ -489,10 +497,6 @@ height: 2.995rem;
     border: none;
     background-color: transparent;
 }
-
-/*Final do estilo da tela home*/
-/*Inicio do estilo da tela de prontuario*/
-
 
 .titulo-sessao{
     font-family: 'montserrat';
@@ -515,11 +519,12 @@ height: 2.995rem;
 
 .cardProntuario{
     width: auto;
-    min-height: 210px;
+    min-height: fit-content;
     background-color: #ffffff;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border-left: 4px solid ;
-    margin-right: 6%;
+    border-radius: 0px 8px 8px 0px;
+
 }
 
 .imgProntuario{
@@ -540,4 +545,116 @@ height: 2.995rem;
     border-left: 3px solid #000; 
     height: 2.5rem; 
     margin-left: 73px; 
+}
+
+.voltar{
+    text-decoration: none;
+    font-family: 'montserrat';
+    font-size: 16px;
+    font-weight: 400;
+    color: #212121
+}
+
+.ancora-prontuario
+{
+    margin-left: 24px;
+    font-family: 'Comfortaa';
+    font-size: 16px;
+    color: #212121;
+    text-decoration: none;
+}
+
+
+.pesquisar-prontuario
+{
+    margin-top: 28px;
+    margin-right: 200px;
+}
+
+.pesquisar input
+{
+    width: 504px;
+    height: 48px;
+    border: 1px solid #BDBDBD;
+    border-radius: 24px 0px 0px 24px;
+    margin-right: 0px;
+}
+
+.pesquisar button
+{
+    background: #00995D;
+    color: #ffffff;
+    width: 125px;
+    height: 48px;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.dataProntuario{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #616161;
+}
+
+.corpoProntuario{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    color: #424242;
+}
+
+.dropdown-menu button:hover{
+    background-color: transparent;
+}
+
+.btn-prontuario{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+}
+
+.btn-prontuario img{
+    margin-right: 5px;
+}
+
+#dataFato{
+    width: 182px;
+    height: 48px;
+    margin-top: 12px;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px; 
+}
+
+#tituloFato{
+    width: 380px;
+    height: 48px;
+    margin-top: 12px;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+}
+
+#ocorridoFato{
+    width: 589px;
+    height: 153px;
+    margin-top: 12px;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+}
+
+.textFato{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.border-modal{
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+    height: 48px;
 }

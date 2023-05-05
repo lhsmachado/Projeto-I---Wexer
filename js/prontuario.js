@@ -1,5 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const idPaciente = urlParams.get("id");
+const userserializado = sessionStorage.getItem('logged')
+const idUser = JSON.parse(userserializado)
 let paciente;
 let sessao;
 attprontuario();
@@ -22,9 +24,9 @@ document.getElementById("sessaoModal").addEventListener("submit", (e) => {
         };
 
         enviaSessao(sessao);
-    })
+})
 
-    document.getElementById("fatoModal").addEventListener("submit", (e) => {
+document.getElementById("fatoModal").addEventListener("submit", (e) => {
         e.preventDefault();
         console.log("entrou");
         sessao = {
@@ -36,7 +38,8 @@ document.getElementById("sessaoModal").addEventListener("submit", (e) => {
         };
 
         enviaSessao(sessao);
-    })    
+}) 
+
 async function getPaciente(id){
     const response =  await fetch(`http://localhost:3000/pacientes?id=`+ id); 
     const pacienteresponse = await response.json();
@@ -67,9 +70,7 @@ async function enviaSessao(data){
       body: JSON.stringify(data)
     })
     window.location.reload();
-    }
-
-
+}
 
  async function getCard (id) {
     const response = await fetch(`http://localhost:3000/prontuario?paciente=` + id);
@@ -82,10 +83,37 @@ const addCard = async () =>{
     const card = await getCard(idPaciente)
     console.log(card)
     const cardHtml = document.getElementById("exibeCard");
+    let sessao = 0;
+
+    for (let i = card.length-1; i>=0; i--){
+        if (card[i].tipo==='sessao'){
+            sessao++;
+        }
+    }
     for (let i = card.length -1;i>= 0; i--){
+
+        const data = card[i].data.split('/')
+        const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+        const mes = meses[data[1]-1]
+        console.log(mes)
+        const dataProntuario = `${data[0]} de ${mes} de ${data[2]}`
         
+
+
+
         if(card[i].tipo === "fato"){
-            const dadosCard = `<div class="col-12">
+            let ocorrido
+            const ocorridoOriginal = card[i].ocorrido;
+            const tamMax = 250;
+
+            if(ocorridoOriginal.length > tamMax){
+                 ocorrido = ocorridoOriginal.substring(0,tamMax) + "..." + "<span>Ver mais</span>"
+            }
+            else{
+                 ocorrido = ocorridoOriginal
+            }
+
+            const dadosCard = `<div class="col-12 p-0">
             <div class="container-fluid cardProntuario"style = "border-color:#2F80ED">
                 <div class="row d-flex ">
                     <div class="col-12">
@@ -101,33 +129,47 @@ const addCard = async () =>{
                             <button type="button" data-bs-toggle="dropdown" aria-expanded="false" class="moreBtn">
                               ...
                             </button>
-                            <ul class="dropdown-menu">
-                              <li><button class="dropdown-item" href="#">Action</button></li>
-                              <li><button class="dropdown-item" href="#">Another action</button></li>
+                            <ul class="dropdown-menu" style="height:fit-content; width:fit-content;">
+                              <li><button class="dropdown-item m-2 btn-prontuario " style="color:#2F80ED"><img src="./image/pencil-line.svg" alt="">Editar</button></li>
+                              <li><button class="dropdown-item m-2 btn-prontuario" style="color:#EB5757"><img src="./image/delete-bin-5-line.svg" alt="">Excluir</button></li>
                             </ul>
                           </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <span>${card[i].data}</span>
+                        <span class="dataProntuario">${dataProntuario}</span>
                     </div>
                 </div>
-                <div class="row mt-5">
+                <div class="row mt-3">
                     <div class="col-12">
-                        <span id="resumoCard">${card[i].ocorrido}</span>
+                        <span id="resumoCard" class="corpoProntuario">${ocorrido}</span><br><br>
                     </div>
                 </div>
             </div>
         </div>`
+        
         if(verlinha > 0){
             cardHtml.innerHTML += `<div class="vertical-line" style="border-color: #2F80ED"></div>`;
         }
         cardHtml.innerHTML += dadosCard;
         }
         if(card[i].tipo === "sessao"){
-            const dadosCard = `<a href="./sessao.html?id=${card[i].id}" style="text-decoration:none"><div class="col-12">
+
+            let resumo
+            const resumoOriginal = card[i].resumo;
+            const tamMax = 250;
+
+            if(resumoOriginal.length > tamMax){
+                 resumo = resumoOriginal.substring(0,tamMax) + "..." + `<span style="color:#2F80ED">Ver mais</span>`;
+            }
+            else{
+                 resumo = resumoOriginal;
+            }
+
+            const dadosCard = `<a href="./sessao.html?id=${card[i].id}" style="text-decoration:none" class="p-0 mb-3"><div class="col-12 ">
             <div class="container-fluid cardProntuario" style = "border-color:#00995D">
+            
                 <div class="row d-flex ">
                     <div class="col-12">
                     <img src="./image/mental-prontuario.svg" alt="" class="imgProntuario">
@@ -135,33 +177,33 @@ const addCard = async () =>{
                 </div>
                 <div class="row d-flex">
                     <div class="col ">
-                        <h4>Sessão </h4>
+                        <h4 style="color:black">Sessão 0${sessao} </h4>
                     </div>
                     <div class="col d-flex justify-content-end">
-                        <div class="dropdown">
-                            <button type="button" data-bs-toggle="dropdown" aria-expanded="false" class="moreBtn">
-                              ...
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><button class="dropdown-item" href="#">Action</button></li>
-                              <li><button class="dropdown-item" href="#">Another action</button></li>
-                            </ul>
-                          </div>
+                    <div class="dropdown">
+                    <button type="button" data-bs-toggle="dropdown" aria-expanded="false" class="moreBtn">
+                      ...
+                    </button>
+                    <ul class="dropdown-menu" style="height:fit-content; width:fit-content;">
+                      <li><button class="dropdown-item m-2 btn-prontuario " style="color:#2F80ED"><img src="./image/pencil-line.svg" alt="">Editar</button></li>
+                      <li><button class="dropdown-item m-2 btn-prontuario" style="color:#EB5757"><img src="./image/delete-bin-5-line.svg" alt="">Excluir</button></li>
+                    </ul>
+                  </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <span>${card[i].data}</span>
+                        <span class="dataProntuario">${dataProntuario}</span>
                     </div>
                 </div>
-                <div class="row mt-5">
+                <div class="row mt-3">
                     <div class="col-12">
-                        <span id="resumoCard">${card[i].resumo}</span>
+                        <span id="resumoCard" class="corpoProntuario">${resumo}</span><br><br>
                     </div>
                 </div>
             </div>
         </div></a>` 
-
+        sessao--;
         if(verlinha > 0){
             cardHtml.innerHTML += `<div class="vertical-line" style="border-color: #00995D"></div>`;
         }
@@ -173,4 +215,25 @@ const addCard = async () =>{
 };
 
 }
-addCard();
+
+const getUser = async (id) =>{
+    const response = await fetch(`http://localhost:3000/cadastros?id=`+ id); 
+    const user = response.json();
+    return(user);
+    console.log(user)
+}
+
+const attHeader = async()=>{
+    const user = await getUser(idUser);
+
+    const nomeCompleto = user[0].nome
+    const nome = nomeCompleto.split(' ')[0]
+    document.getElementById("nomeUser").textContent = nome
+
+    const email = user[0].email
+    document.getElementById('emailUser').textContent = email
+
+    };
+
+    addCard();
+    attHeader();

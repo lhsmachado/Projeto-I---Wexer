@@ -16,7 +16,7 @@
 <body class="bg-home">
     <header>
         <nav class="navbar">
-        <div class="container-fluid header-home">
+            <div class="container-fluid header-home">
                 <div class="navbar-brand logo-header d-flex  justify-content-center">
                     <img src="./image/logo-wexer-home.svg" alt="Logo da Wexer em verde" class="align-self-center">
                 </div>
@@ -24,17 +24,15 @@
                     <div class="dropdown drop-logout me-5">
                         <button class="btn dropdown-toggle btn-logout" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Bem vindo(a), <span id="nomeUser"></span>
-                        </button>
-                        
-                        <ul class="dropdown-menu">
-                            
+                        </button>                        
+                        <ul class="dropdown-menu">                            
                           <li class="vw-email">Admin <br><span id="emailUser"></span></li>
                           <li><button class="dropdown-item text-center btn-sair p-3">Sair</button></li>
                           </ul>
                       </div>
                 </div>
             </div>
-    </nav>
+        </nav>
     </header>
     <main >
         <div class="container-fluid">
@@ -51,10 +49,10 @@
                                 <button class="btn-adicionar-paciente" data-bs-toggle="modal" data-bs-target="#createModal" id="btn-create"><i class="fa-solid fa-circle-plus" ></i> Novo Cadastro</button>
                             </div>
                             <div class="col-12 col-sm-6 mt-4">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control filtrar" placeholder="Pesquisar" id="filtrar" >
-                                    <button class="btn btn-outline-secondary btn-filtrar" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i> Filtrar</button>
-                                  </div>
+                                <form class="d-flex pesquisar justify-content-end me-4" role="search" >
+                                    <input class="form-control" type="text" placeholder="Pesquisar" id="pesquisar-home-input">
+                                    <button class="btn btn-outline-success" type="button" onclick="pesquisar()"><i class="fa-solid fa-magnifying-glass m-1"></i>Filtrar</button>
+                                </form>
                             </div>
                         </div>
                         
@@ -72,12 +70,8 @@
                                 <h4>Ações</h4>
                             </div>
                         </div>
-                        
                     </div>
-                    
-                    
-                </div>
-               
+                </div>              
             </div>
         </div>
     </main>
