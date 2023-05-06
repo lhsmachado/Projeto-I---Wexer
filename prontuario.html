@@ -32,7 +32,7 @@
                         <ul class="dropdown-menu">
                             
                           <li class="vw-email">Admin <br><span id="emailUser"></span></li>
-                          <li><button class="dropdown-item text-center btn-sair p-3">Sair</button></li>
+                          <li><button class="dropdown-item text-center btn-sair p-3" id="logout">Sair</button></li>
                           </ul>
                       </div>
                 </div>
@@ -149,15 +149,15 @@
             <div class="row">
                 <div class="col-4 me-3 p-0 inputSessao">
                     <label for="" class="textFato">Data*</label>
-                    <input type="text" id="dataSessao" class="border-modal">
+                    <input type="text" id="dataSessao" class="border-modal data-input" maxlength="10">
                 </div>
                 <div class="col-4 me-3 p-0 inputSessao">
                     <label for="" class="textFato">Hora de inicio*</label>
-                    <input type="text" id="inicioSessao" class="border-modal">
+                    <input type="text" id="inicioSessao" class="border-modal horario-input" maxlength="5">
                 </div>
                 <div class="col-4 me-3 p-0 inputSessao">
                     <label for="" class="textFato">Hora fim*</label>
-                    <input type="text" id="fimSessao" class="border-modal">
+                    <input type="text" id="fimSessao" class="border-modal horario-input" maxlength="5">
                 </div>
             </div>
             <hr style="margin-top:23px;margin-bottom:23px;">
@@ -243,7 +243,7 @@
                 <div class="row mt-4">
                     <div class="col-4">
                         <label for="" class="textFato">Data*</label>
-                        <input type="text" placeholder="24/01/2023" id="dataFato">
+                        <input type="text" placeholder="24/01/2023" id="dataFato" class="data-input" maxlength="10">
                     </div>
                     <div class="col-8">
                         <label for="" class="textFato">Título*</label>

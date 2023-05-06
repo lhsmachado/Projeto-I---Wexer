@@ -1,142 +1,136 @@
-const userserializado = sessionStorage.getItem('logged')
-const idUser = JSON.parse(userserializado)
+const userserializado = sessionStorage.getItem('logged') //Busca os dados do usuário no armazenamento do navegador.
+const idUser = JSON.parse(userserializado) //Converte os dados em uma variavél utilizavel.
 let novoPaciente;
 let atualizaPaciente;
 let idEditar;
 let user;
-function gerarId(idUser) {
-  const timestamp = new Date().getTime();
-  const timestampString = timestamp.toString(); 
-  const digitos = timestampString.substring(5, 10); 
-  const id = `${idUser}${digitos}`;
-  
-  console.log(id)
-  return id;
-}
 
-const getUser = async (id) =>{
-  const response = await fetch(`http://localhost:3000/cadastros?id=`+ id); 
+//Busca os dados do usuário no banco de dados através do id fornecido pelo login.
+const getUser = async (id) => {
+  const response = await fetch(`http://localhost:3000/cadastros?id=` + id);
   const user = response.json();
-  return(user);
-  console.log(user)
+  return (user);
+
 }
 
-const getPacientes = async () =>{
+//Busca a lista de pacientes do usuário no banco de dados.
+const getPacientes = async () => {
   try {
-    const response = await fetch(`http://localhost:3000/pacientes?idPsicologo=`+ idUser);
+    const response = await fetch(`http://localhost:3000/pacientes?idPsicologo=` + idUser);
     const pacientes = await response.json();
-    return(pacientes);
-        
+    return (pacientes);
+
   } catch (error) {
     console.error("Erro ao recuperar os dados do cadastro:", error);
-}}
+  }
+}
 
-const getPacientesFilter = async (data) =>{
+const getPacientesFilter = async (data) => {
   try {
-    const response = await fetch(`http://localhost:3000/pacientes?q=`+ data);
+    const response = await fetch(`http://localhost:3000/pacientes?q=` + data);
     const pacientes = await response.json();
-    return(pacientes);
-        
+    return (pacientes);
+
   } catch (error) {
     console.error("Erro ao recuperar os dados do cadastro:", error);
-}}
+  }
+}
 
-  document.getElementById("createModal").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    
-        novoPaciente = {
-        id: gerarId(idUser),
-        cpf: document.getElementById("cpf").value,
-        nome: document.getElementById("nome").value,
-        nascimento: document.getElementById("nascimento").value,
-        email: document.getElementById("email").value,
-        genero: document.getElementById("genero").value,
-        nacionalidade: document.getElementById("nacionalidade").value,
-        naturalidade: document.getElementById("naturalidade").value,
-        profissao: document.getElementById("profissao").value,
-        escolaridade: document.getElementById("escolaridade").value,
-        relacionamento: document.getElementById("relacionamento").value,
-        mae: document.getElementById("mae").value,
-        pai: document.getElementById("pai").value,
-        idPsicologo: idUser
-    }
+document.getElementById("createModal").addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-    addPaciente(novoPaciente)
+  novoPaciente = {
+    cpf: document.getElementById("cpf").value,
+    nome: document.getElementById("nome").value,
+    nascimento: document.getElementById("nascimento").value,
+    email: document.getElementById("email").value,
+    genero: document.getElementById("genero").value,
+    nacionalidade: document.getElementById("nacionalidade").value,
+    naturalidade: document.getElementById("naturalidade").value,
+    profissao: document.getElementById("profissao").value,
+    escolaridade: document.getElementById("escolaridade").value,
+    relacionamento: document.getElementById("relacionamento").value,
+    mae: document.getElementById("mae").value,
+    pai: document.getElementById("pai").value,
+    idPsicologo: idUser
+  }
+
+  addPaciente(novoPaciente)
 })
 
 
 document.getElementById('cpf').addEventListener('input', function (event) {
   let cpf = event.target.value;
-  cpf = cpf.replace(/\D/g, ''); 
+  cpf = cpf.replace(/\D/g, '');
 
   if (cpf.length > 3) {
-    cpf = cpf.replace(/^(\d{3})/, '$1.'); 
+    cpf = cpf.replace(/^(\d{3})/, '$1.');
   }
 
   if (cpf.length > 6) {
-    cpf = cpf.replace(/^(\d{3})\.(\d{3})/, '$1.$2.'); 
+    cpf = cpf.replace(/^(\d{3})\.(\d{3})/, '$1.$2.');
   }
 
   if (cpf.length > 9) {
-    cpf = cpf.replace(/^(\d{3})\.(\d{3})\.(\d{3})/, '$1.$2.$3-'); 
+    cpf = cpf.replace(/^(\d{3})\.(\d{3})\.(\d{3})/, '$1.$2.$3-');
   }
 
   event.target.value = cpf;
 });
 
-  const addPaciente = async (user) => {
-    await fetch(`http://localhost:3000/pacientes`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(user)
-    })
-    window.location.reload();
-    }
+const addPaciente = async (user) => {
+  await fetch(`http://localhost:3000/pacientes`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user)
+  })
+  window.location.reload();
+}
 
-  const attPaciente = async (dados) => {
-      await fetch(`http://localhost:3000/pacientes/${idEditar}` , {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dados)
-      })
-      window.location.reload();
-      }
+const attPaciente = async (dados) => {
+  await fetch(`http://localhost:3000/pacientes/${idEditar}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dados)
+  })
+  window.location.reload();
+}
 
-    function adicionarEventosDeClique() {
-      const linhas = document.querySelectorAll('[id^="linha-"]');
-      linhas.forEach(linha => {
-        linha.addEventListener("click", (event) => {
-          event.stopPropagation();
-          const id = linha.id.split('-')[1];
-          mostrarPaciente(id);
-        });
-    
-        const editarBtn = linha.querySelector(`#editar-${linha.id.split('-')[1]}`);
-        editarBtn.addEventListener('click', (event) => {
-          event.stopPropagation();
-          const id = linha.id.split('-')[1];
-          editarPaciente(id);
-        });
-    
-        const deletarBtn = linha.querySelector('#deletePaciente');
-        deletarBtn.addEventListener('click', (event) => {
-          event.stopPropagation();
-          const id = linha.id.split('-')[1];
-          deletarPaciente(id);
-        });
-      });
-    }
+function adicionarEventosDeClique() {
+  const linhas = document.querySelectorAll('[id^="linha-"]');
+  linhas.forEach(linha => {
+    linha.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const id = linha.id.split('-')[1];
+      mostrarPaciente(id);
+    });
 
-    const editarPaciente = async (id) => {
-      const response =  await fetch(`http://localhost:3000/pacientes?id=`+ id); 
-      const pacienteresponse = await response.json();
-      const paciente = pacienteresponse[0];
-      idEditar = id;
-      const formEditar = ` <div class="row">
+    const editarBtn = linha.querySelector(`#editar-${linha.id.split('-')[1]}`);
+    editarBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const id = linha.id.split('-')[1];
+      editarPaciente(id);
+    });
+
+    const deletarBtn = linha.querySelector('#deletePaciente');
+    deletarBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const id = linha.id.split('-')[1];
+      deletarPaciente(id);
+    });
+  });
+}
+
+const editarPaciente = async (id) => {
+  const response = await fetch(`http://localhost:3000/pacientes?id=` + id);
+  const pacienteresponse = await response.json();
+  const paciente = pacienteresponse[0];
+  idEditar = id;
+  const formEditar = ` <div class="row">
       <div class="col-6 text-start">
           <h5 class="titulo-modal" >Editar dados do paciente</h5>
       </div>
@@ -214,32 +208,32 @@ document.getElementById('cpf').addEventListener('input', function (event) {
           </div>
       </div>`
 
-      const editarBody = document.getElementById("editarBody")
-      editarBody.innerHTML = formEditar
-      console.log("teste")
-      
-    }
+  const editarBody = document.getElementById("editarBody")
+  editarBody.innerHTML = formEditar
+  console.log("teste")
 
-    const deletarPaciente = async (id) => {
+}
 
-      await fetch(`http://localhost:3000/pacientes/`+ id, {
-        method: "DELETE"
-      });
-      window.location.reload();
-      
-      console.log("Deletar Paciente: ", id);
-    }
+const deletarPaciente = async (id) => {
 
-   const addTabela = async () =>{
+  await fetch(`http://localhost:3000/pacientes/` + id, {
+    method: "DELETE"
+  });
+  window.location.reload();
 
-    const pacientes = await getPacientes();
-    const tabela = document.getElementById("tabela");
-    
+  console.log("Deletar Paciente: ", id);
+}
 
-    for (let i = 0; i < pacientes.length; i++) {
+const addTabela = async () => {
 
-      const dadosTabela = 
-        `<div class="row mx-4 titulo-tabela" id="linha-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#mostrarModal">
+  const pacientes = await getPacientes();
+  const tabela = document.getElementById("tabela");
+
+
+  for (let i = 0; i < pacientes.length; i++) {
+
+    const dadosTabela =
+      `<div class="row mx-4 titulo-tabela" id="linha-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#mostrarModal">
           <div class="col-sm-2  border text-center">
               <span>${pacientes[i].id}</span>
           </div>
@@ -263,34 +257,34 @@ document.getElementById('cpf').addEventListener('input', function (event) {
           </div>
         </div>`
 
-      tabela.innerHTML += dadosTabela
+    tabela.innerHTML += dadosTabela
 
-    };
-    tabela.innerHTML += `<div class="row p-5"></div>`
-    adicionarEventosDeClique();
-  }
-  const attHeader = async()=>{
-    const user = await getUser(idUser);
+  };
+  tabela.innerHTML += `<div class="row p-5"></div>`
+  adicionarEventosDeClique();
+}
+const attHeader = async () => {
+  const user = await getUser(idUser);
 
-    const nomeCompleto = user[0].nome
-    const nome = nomeCompleto.split(' ')[0]
-    document.getElementById("nomeUser").textContent = nome
+  const nomeCompleto = user[0].nome
+  const nome = nomeCompleto.split(' ')[0]
+  document.getElementById("nomeUser").textContent = nome
 
-    const email = user[0].email
-    document.getElementById('emailUser').textContent = email
+  const email = user[0].email
+  document.getElementById('emailUser').textContent = email
 
-    };
+};
 
-  addTabela();
-  attHeader();
-  
-  const mostrarPaciente = async (id) => {
-    
-    const response =  await fetch(`http://localhost:3000/pacientes?id=`+ id); 
-    const pacienteresponse = await response.json();
-    const paciente = pacienteresponse[0]
-    console.log(paciente)
-    const formMostrar = `<div class="row">
+addTabela();
+attHeader();
+
+const mostrarPaciente = async (id) => {
+
+  const response = await fetch(`http://localhost:3000/pacientes?id=` + id);
+  const pacienteresponse = await response.json();
+  const paciente = pacienteresponse[0]
+  console.log(paciente)
+  const formMostrar = `<div class="row">
     <div class="col-6 text-start">
         <h5 class="titulo-modal">Dados do Paciente</h5>
         
@@ -371,52 +365,53 @@ document.getElementById('cpf').addEventListener('input', function (event) {
         </div>
     </div>`
 
-    const mostrarBody = document.getElementById("mostrarBody")
-    mostrarBody.innerHTML = formMostrar
-    
-    document.getElementById("editar").addEventListener('click', function(e){
-      e.preventDefault();
-      editarPaciente(id);
-    }
-    );
+  const mostrarBody = document.getElementById("mostrarBody")
+  mostrarBody.innerHTML = formMostrar
 
+  document.getElementById("editar").addEventListener('click', function (e) {
+    e.preventDefault();
+    editarPaciente(id);
+  }
+  );
+
+}
+
+document.getElementById("editarModal").addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("teste")
+  atualizaPaciente = {
+    id: idEditar,
+    cpf: document.getElementById("editarCpf").value,
+    nome: document.getElementById("editarNome").value,
+    nascimento: document.getElementById("editarNascimento").value,
+    email: document.getElementById("editarEmail").value,
+    genero: document.getElementById("editarGenero").value,
+    nacionalidade: document.getElementById("editarNacionalidade").value,
+    naturalidade: document.getElementById("editarNaturalidade").value,
+    profissao: document.getElementById("editarProfissao").value,
+    escolaridade: document.getElementById("editarEscolaridade").value,
+    relacionamento: document.getElementById("editarRelacionamento").value,
+    mae: document.getElementById("editarMae").value,
+    pai: document.getElementById("editarPai").value,
+    idPsicologo: idUser
   }
 
-  document.getElementById("editarModal").addEventListener("submit", function(e) {
-    e.preventDefault();
-    console.log("teste")
-        atualizaPaciente = {
-        id: idEditar,  
-        cpf: document.getElementById("editarCpf").value,
-        nome: document.getElementById("editarNome").value,
-        nascimento: document.getElementById("editarNascimento").value,
-        email: document.getElementById("editarEmail").value,
-        genero: document.getElementById("editarGenero").value,
-        nacionalidade: document.getElementById("editarNacionalidade").value,
-        naturalidade: document.getElementById("editarNaturalidade").value,
-        profissao: document.getElementById("editarProfissao").value,
-        escolaridade: document.getElementById("editarEscolaridade").value,
-        relacionamento: document.getElementById("editarRelacionamento").value,
-        mae: document.getElementById("editarMae").value,
-        pai: document.getElementById("editarPai").value,
-        idPsicologo: idUser
-    }
-  
-    attPaciente(atualizaPaciente)
-    
-  })
+  attPaciente(atualizaPaciente)
 
- const  pesquisar = async () => {
-    
-    const pesquisa = document.getElementById("pesquisar-home-input").value
-    const pacientes = await getPacientesFilter(pesquisa)
-    const tabela = document.getElementById("tabela");
+})
 
-    if(pesquisa === ' '){
-      window.reload.location
-    }
+//Faz uma pesquisa no banco de dados se existe algum paciente com o dado fornecido e retorna ele na tabela de pacientes.
+const pesquisar = async () => {
 
-    tabela.innerHTML = ` <div class="row">
+  const pesquisa = document.getElementById("pesquisar-home-input").value
+  const pacientes = await getPacientesFilter(pesquisa)
+  const tabela = document.getElementById("tabela");
+
+  if (pesquisa === ' ') {
+    window.reload.location
+  }
+
+  tabela.innerHTML = ` <div class="row">
     <div class="col-12 col-sm-6">
         <button class="btn-adicionar-paciente" data-bs-toggle="modal" data-bs-target="#createModal" id="btn-create"><i class="fa-solid fa-circle-plus" ></i> Novo Cadastro</button>
     </div>
@@ -442,10 +437,10 @@ document.getElementById('cpf').addEventListener('input', function (event) {
         <h4>Ações</h4>
     </div>
 </div>`
-for (let i = 0; i < pacientes.length; i++) {
+  for (let i = 0; i < pacientes.length; i++) {
 
-  const dadosTabela = 
-    `<div class="row mx-4 titulo-tabela" id="linha-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#mostrarModal">
+    const dadosTabela =
+      `<div class="row mx-4 titulo-tabela" id="linha-${pacientes[i].id}" data-bs-toggle="modal" data-bs-target="#mostrarModal">
       <div class="col-sm-2  border text-center">
           <span>${pacientes[i].id}</span>
       </div>
@@ -469,9 +464,17 @@ for (let i = 0; i < pacientes.length; i++) {
       </div>
     </div>`
 
-  tabela.innerHTML += dadosTabela
-  adicionarEventosDeClique();
-};
-tabela.innerHTML += `<div class="row p-5"></div>`
+    tabela.innerHTML += dadosTabela
+    adicionarEventosDeClique();
+  };
+  tabela.innerHTML += `<div class="row p-5"></div>`
 
-  }
+}
+
+//Remove os dados do usuário do armazenamento do navegador e o encaminha para a tela de login.
+document.getElementById("logout").addEventListener("click", function (e) {
+  e.preventDefault();
+  sessionStorage.removeItem("logged");
+  window.location.href = "index.html";
+
+})
