@@ -5,6 +5,11 @@ let atualizaPaciente;
 let idEditar;
 let user;
 
+//Verifica se existe algum usuário logado, caso não encontre reencaminha para a tela de login.
+if(idUser === null){
+  window.location.href = "index.html"
+}
+
 //Busca os dados do usuário no banco de dados através do id fornecido pelo login.
 const getUser = async (id) => {
   const response = await fetch(`http://localhost:3000/cadastros?id=` + id);
@@ -25,6 +30,7 @@ const getPacientes = async () => {
   }
 }
 
+//Busca uma lista de pacientes filtrada pela pesquisa do usuário.
 const getPacientesFilter = async (data) => {
   try {
     const response = await fetch(`http://localhost:3000/pacientes?q=` + data);
@@ -36,6 +42,7 @@ const getPacientesFilter = async (data) => {
   }
 }
 
+//Recebe os valores adicionados no modal de criação de novo paciente.
 document.getElementById("createModal").addEventListener("submit", async function (e) {
   e.preventDefault();
 
@@ -58,7 +65,7 @@ document.getElementById("createModal").addEventListener("submit", async function
   addPaciente(novoPaciente)
 })
 
-
+//Faz a verificação do input de cpf e coloca automaticamente a pontuação
 document.getElementById('cpf').addEventListener('input', function (event) {
   let cpf = event.target.value;
   cpf = cpf.replace(/\D/g, '');
@@ -78,6 +85,7 @@ document.getElementById('cpf').addEventListener('input', function (event) {
   event.target.value = cpf;
 });
 
+//Adiciona o paciente no banco de dados.
 const addPaciente = async (user) => {
   await fetch(`http://localhost:3000/pacientes`, {
     method: 'POST',
@@ -89,6 +97,7 @@ const addPaciente = async (user) => {
   window.location.reload();
 }
 
+//Atualiza os dados de um paciente no banco de dados.
 const attPaciente = async (dados) => {
   await fetch(`http://localhost:3000/pacientes/${idEditar}`, {
     method: 'PUT',
@@ -100,6 +109,7 @@ const attPaciente = async (dados) => {
   window.location.reload();
 }
 
+//Adiciona eventos de cliques na tabela de pacientes.
 function adicionarEventosDeClique() {
   const linhas = document.querySelectorAll('[id^="linha-"]');
   linhas.forEach(linha => {
@@ -125,6 +135,7 @@ function adicionarEventosDeClique() {
   });
 }
 
+//Cria um modal com os dados do paciente para serem editados.
 const editarPaciente = async (id) => {
   const response = await fetch(`http://localhost:3000/pacientes?id=` + id);
   const pacienteresponse = await response.json();
@@ -214,6 +225,7 @@ const editarPaciente = async (id) => {
 
 }
 
+//Deleta um paciente no banco de dados.
 const deletarPaciente = async (id) => {
 
   await fetch(`http://localhost:3000/pacientes/` + id, {
@@ -224,6 +236,7 @@ const deletarPaciente = async (id) => {
   console.log("Deletar Paciente: ", id);
 }
 
+//Adiciona as linhas na tabela de pacientes.
 const addTabela = async () => {
 
   const pacientes = await getPacientes();
@@ -263,6 +276,8 @@ const addTabela = async () => {
   tabela.innerHTML += `<div class="row p-5"></div>`
   adicionarEventosDeClique();
 }
+
+//Atualiza o header com os dados do usuário.
 const attHeader = async () => {
   const user = await getUser(idUser);
 
@@ -278,6 +293,7 @@ const attHeader = async () => {
 addTabela();
 attHeader();
 
+//Cria um modal com os dados do paciente, porém com os campos desabilitados.
 const mostrarPaciente = async (id) => {
 
   const response = await fetch(`http://localhost:3000/pacientes?id=` + id);
@@ -285,10 +301,10 @@ const mostrarPaciente = async (id) => {
   const paciente = pacienteresponse[0]
   console.log(paciente)
   const formMostrar = `<div class="row">
-    <div class="col-6 text-start">
+    <div class="col-6 text-start d-flex">
         <h5 class="titulo-modal">Dados do Paciente</h5>
         
-        <button class="iconesTabela" id="editar" data-bs-toggle="modal" data-bs-target="#editarModal"><img src="./image/editar-icon.svg" alt=""></button>
+        <button class="iconesTabela ms-4 mt-4" id="editar" data-bs-toggle="modal" data-bs-target="#editarModal"><img src="./image/editar-icon.svg" alt=""></button>
     
     </div>
     <div class="col-6 text-end">
@@ -376,6 +392,7 @@ const mostrarPaciente = async (id) => {
 
 }
 
+//Faz a leitura dos campos no modal de edição e chama a função de atualização
 document.getElementById("editarModal").addEventListener("submit", function (e) {
   e.preventDefault();
   console.log("teste")
@@ -478,3 +495,5 @@ document.getElementById("logout").addEventListener("click", function (e) {
   window.location.href = "index.html";
 
 })
+
+

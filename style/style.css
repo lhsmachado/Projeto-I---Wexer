@@ -1,11 +1,12 @@
-.body-login{ /*Estilo do background das telas de login e cadastro*/
+.body-login {
+    /*Estilo do background das telas de login e cadastro*/
     background-image: url("./image-css/logo-bg.svg");
     background-repeat: no-repeat;
     background-color: #E5E5E5;
- } 
+}
 
 /*Inicio do estilo da tela de login*/
-.login{
+.login {
     max-width: 38rem;
     max-height: 38rem;
     background-color: #017849;
@@ -14,21 +15,24 @@
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.logo-wexer{
+.logo-wexer {
     max-width: 20.064rem;
     height: 7.964rem;
     margin-top: 4.844rem;
 
 }
-.form-center{
+
+.form-center {
     margin-left: 20%;
     margin-right: 20%;
 }
-.form-login{
+
+.form-login {
     margin-top: 4.036rem;
 
 }
-.form-login label{
+
+.form-login label {
     color: #ffffff;
     font-family: 'Roboto';
     margin-bottom: 0;
@@ -37,13 +41,13 @@
 }
 
 
-.input-login{
-max-width: 23.69rem; 
-height: 2.995rem;
+.input-login {
+    max-width: 23.69rem;
+    height: 2.995rem;
 
 }
 
-.form-login .btn-primary{
+.form-login .btn-primary {
     max-width: 23.69rem;
     height: 3rem;
     border-radius: 0.50rem;
@@ -57,13 +61,13 @@ height: 2.995rem;
     font-weight: bold;
 }
 
-.form-login button:hover{
+.form-login button:hover {
     background: #017849;
     border-color: #ffffff;
     filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.1));
 }
 
-.link-cadastro{
+.link-cadastro {
     color: #ffffff;
     font-family: 'montserrat';
     font-size: 1.125rem;
@@ -76,25 +80,27 @@ height: 2.995rem;
 
 /*Final do estilo da tela de login*/
 /*Incio do estilo da tela de cadastro*/
-.cadastro{
+.cadastro {
     max-width: 32.5rem;
     max-height: 29.125rem;
     margin-top: 6rem;
     background-color: #ffffff;
     border-radius: 0.938rem;
 }
-.logo-cadastro img{
+
+.logo-cadastro img {
     width: 11.362rem;
     height: 2.516rem;
     margin-top: 2.688rem;
     padding: 0;
 }
 
-.form-center-cadastro{
+.form-center-cadastro {
     margin-left: 13%;
     margin-right: 13%;
 }
-.titulo-cadastro h2{
+
+.titulo-cadastro h2 {
     margin: 0;
     margin-top: 1.609rem;
     text-align: center;
@@ -104,7 +110,8 @@ height: 2.995rem;
     line-height: 1.371rem;
     color: #00995D;
 }
-.titulo-cadastro h3{
+
+.titulo-cadastro h3 {
     margin-top: 0.38rem;
     margin-bottom: 1.625rem;
     text-align: center;
@@ -115,7 +122,7 @@ height: 2.995rem;
     color: #00995D;
 }
 
-.form-cadastro label{
+.form-cadastro label {
     /* margin-left: 13.5%; */
     color: #6F6F6E;
     font-family: 'Roboto';
@@ -124,7 +131,7 @@ height: 2.995rem;
     font-weight: 400;
 }
 
-.input-cadastro{
+.input-cadastro {
     max-width: 23.69rem;
     height: 2.995rem;
     /* margin-left: 13.5%; */
@@ -135,7 +142,7 @@ height: 2.995rem;
     border-radius: 0.50rem;
 }
 
-.form-cadastro .btn-primary{
+.form-cadastro .btn-primary {
     /* margin-right: 13.5%; */
     /* margin-left: 16.063rem; */
     margin-top: 2.188rem;
@@ -150,29 +157,30 @@ height: 2.995rem;
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.25rem;
-    
+
 }
 
-.form-cadastro .fa-arrow-right{
+.form-cadastro .fa-arrow-right {
     margin-left: 0.813rem;
 }
 
-.form-cadastro .btn-primary:hover{
+.form-cadastro .btn-primary:hover {
     background: #017849;
 }
+
 /*Final do estilo da tela de cadastro*/
 /*Incio do estilo da tela de cadastro da senha*/
 
-.cadastro-senha{
+.cadastro-senha {
     max-width: 32.5rem;
     max-height: 33.375rem;
     background: #ffffff;
     margin-top: 6.125rem;
-   
+
     border-radius: 1rem;
 }
 
-.form-cadastro ul{
+.form-cadastro ul {
     list-style-type: none;
     /* margin-top: 1.145rem; */
     /* margin-left: 4.375rem; */
@@ -181,17 +189,18 @@ height: 2.995rem;
     font-family: 'montserrat';
 }
 
-.form-cadastro span{
+.form-cadastro span {
     color: #eb5757;
 }
 
-#btn-senha{
+#btn-senha {
     margin-top: 0;
 }
+
 /*Final do estilo da tela de cadastro da senha*/
 /*Inicio do estilo da tela home*/
 
-.header-home{
+.header-home {
     width: 100%;
     height: 5.063rem;
     margin: 0;
@@ -200,12 +209,12 @@ height: 2.995rem;
     padding: 0;
 }
 
-.navbar{
+.navbar {
     height: 5rem;
     padding: 0;
 }
 
-.logo-header{
+.logo-header {
     height: 5rem;
     width: 5rem;
     background: #FFFFFF;
@@ -213,11 +222,11 @@ height: 2.995rem;
     margin: 0;
 }
 
-.logo-header img{
+.logo-header img {
     height: 44.33px;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     width: 279px;
     height: 124px;
     margin-right: 20px;
@@ -229,15 +238,17 @@ height: 2.995rem;
     z-index: 99999;
 }
 
-.btn-sair{
-    height:auto;
+.btn-sair {
+    height: auto;
     width: 100%;
     border-radius: 16px;
 }
-.btn-sair:hover{
+
+.btn-sair:hover {
     background-color: #FFFFFF;
 }
-.vw-email{
+
+.vw-email {
     background: linear-gradient(358.25deg, rgba(229, 229, 229, 0.68) 19.64%, #FFFFFF 75.78%);
     height: 58px;
     border-top-right-radius: 16px;
@@ -245,25 +256,30 @@ height: 2.995rem;
     padding-left: 15px;
 }
 
-#emailUser{
+#emailUser {
     font-size: 12px;
     font-family: 'montserrat';
 }
 
-.btn-logout{
+.btn-logout {
     color: #00995D;
     font-size: 1.5rem;
 }
-.btn-logout:hover{
+
+.btn-logout:hover {
     color: #00995D;
 }
 
-.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active{
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
     border: 0;
     color: #00995D;
 }
 
-.titulo-home{
+.titulo-home {
     font-family: 'Comfortaa';
     font-style: normal;
     font-size: 24px;
@@ -271,22 +287,22 @@ height: 2.995rem;
     line-height: 27px;
     margin-top: 1rem;
     margin-left: 8%;
-    
+
 }
 
-.bg-tabela{
+.bg-tabela {
     max-width: 100rem;
     background-color: #ffffff;
     border-radius: 1rem;
 }
 
-.bg-home{
+.bg-home {
     background-color: #E5E5E5;
-    height:auto;
+    height: auto;
     width: auto;
 }
 
-.btn-adicionar-paciente{
+.btn-adicionar-paciente {
     background-color: #017849;
     border-radius: 30px;
     width: 12.3rem;
@@ -296,12 +312,14 @@ height: 2.995rem;
     margin-top: 1.5rem;
     margin-left: 1.5rem;
 }
-.input-filtrar{
+
+.input-filtrar {
     max-width: 504px;
     margin-right: 100px;
 
 }
-.filtrar{
+
+.filtrar {
     width: 23.69rem;
     height: 3rem;
     border-top-left-radius: 24px;
@@ -309,7 +327,7 @@ height: 2.995rem;
     margin: 0;
 }
 
-.btn-filtrar{
+.btn-filtrar {
     width: 7.81rem;
     height: 3rem;
     border-top-right-radius: 24px;
@@ -320,12 +338,12 @@ height: 2.995rem;
     margin-right: 24px;
 }
 
-.titulo-tabela{
+.titulo-tabela {
     height: 47px;
 }
 
 
-.titulo-tabela h4{
+.titulo-tabela h4 {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -336,12 +354,12 @@ height: 2.995rem;
     margin: 0;
 }
 
-.input-group{
+.input-group {
     margin-right: 1.5rem;
     z-index: 0;
 }
 
-.titulo-modal{
+.titulo-modal {
     font-family: 'Montserrat';
     font-weight: 700;
     font-size: 24px;
@@ -350,7 +368,7 @@ height: 2.995rem;
     margin-bottom: 1.5rem;
 }
 
-.tam-form{
+.tam-form {
     width: 327px;
     height: 70px;
     margin-right: 1.5rem;
@@ -358,26 +376,27 @@ height: 2.995rem;
     margin-bottom: 1rem;
 }
 
-.tam-form label{
+.tam-form label {
     font-family: 'Roboto';
     font-size: 14px;
     font-weight: 400;
     color: #4f4f4f;
 }
 
-.tam-form input{
+.tam-form input {
     width: 327px;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 0.5rem;
     border: 1px solid #BDBDBD;
 }
-.tam-form select{
+
+.tam-form select {
     width: 327px;
     border: 1px solid #BDBDBD;
 }
 
-.btn-cancelar{
+.btn-cancelar {
     background-color: none;
     border: none;
     font-size: 16px;
@@ -386,27 +405,27 @@ height: 2.995rem;
     color: #616161;
 }
 
-.btn-criar{
+.btn-criar {
     height: 48px;
     width: 147px;
     border-radius: 0.5rem;
-    background-color:#00995D;
+    background-color: #00995D;
     color: #FFFFFF;
 }
 
-.btn-criar:hover{
+.btn-criar:hover {
     background-color: #017849;
     color: #FFFFFF;
 }
 
-.fa-circle-xmark{
+.fa-circle-xmark {
     font-size: 24px;
     color: #000000;
     margin-right: 26px;
     margin-top: 26px;
 }
 
-.btn-closed{
+.btn-closed {
     border: none;
     background-color: transparent;
 }
@@ -414,12 +433,12 @@ height: 2.995rem;
 /*Final do estilo da tela de cadastro da senha*/
 /*Inicio do estilo da tela home*/
 
-.header-prontuario{
+.header-prontuario {
 
     flex-direction: column;
 }
 
-.titulo-prontuario{
+.titulo-prontuario {
     margin-top: 2rem;
     margin-left: 100px;
     font-family: 'Comfortaa';
@@ -429,7 +448,7 @@ height: 2.995rem;
     line-height: 27px;
 }
 
-.resumo-paciente{
+.resumo-paciente {
     width: 21.25rem;
     height: 21.88rem;
     margin-left: 100px;
@@ -439,7 +458,7 @@ height: 2.995rem;
     border-radius: 0.5rem;
 }
 
-.resumo-paciente h4{
+.resumo-paciente h4 {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -448,7 +467,7 @@ height: 2.995rem;
     color: #212121;
 }
 
-.resumo-paciente h5{
+.resumo-paciente h5 {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -456,7 +475,7 @@ height: 2.995rem;
     color: #00995D;
 }
 
-.resumo-paciente span{
+.resumo-paciente span {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -465,7 +484,7 @@ height: 2.995rem;
     margin-left: 1.25rem;
 }
 
- .resumo-sessao{
+.resumo-sessao {
     width: 100%;
     height: 5rem;
     background-color: #FFFFFF;
@@ -473,9 +492,9 @@ height: 2.995rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-right: 6%;
-} 
+}
 
-.btn-sessao{
+.btn-sessao {
     border: none;
     background-color: transparent;
     font-family: 'monteserrat';
@@ -485,7 +504,7 @@ height: 2.995rem;
     font-weight: 700;
 }
 
-.iconesTabela{
+.iconesTabela {
     padding: 0;
     border: none;
     background-color: transparent;
@@ -493,47 +512,47 @@ height: 2.995rem;
     max-height: 24px;
 }
 
-.linhasTabela{
+.linhasTabela {
     border: none;
     background-color: transparent;
 }
 
-.titulo-sessao{
+.titulo-sessao {
     font-family: 'montserrat';
     font-size: 18px;
     font-weight: 500;
     color: #212121;
     display: flex;
-    
+
 }
 
-.modalProntuario{
+.modalProntuario {
     width: 640px;
 }
 
-.inputSessao{
+.inputSessao {
     width: 11rem;
 
 }
 
 
-.cardProntuario{
+.cardProntuario {
     width: auto;
     min-height: fit-content;
     background-color: #ffffff;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid ;
+    border-left: 4px solid;
     border-radius: 0px 8px 8px 0px;
 
 }
 
-.imgProntuario{
+.imgProntuario {
     height: 48px;
     margin-left: 24px;
     margin-top: -24px;
 }
 
-.moreBtn{
+.moreBtn {
     border: none;
     background-color: transparent;
     font-size: 36px;
@@ -542,12 +561,12 @@ height: 2.995rem;
 }
 
 .vertical-line {
-    border-left: 3px solid #000; 
-    height: 2.5rem; 
-    margin-left: 73px; 
+    border-left: 3px solid #000;
+    height: 2.5rem;
+    margin-left: 73px;
 }
 
-.voltar{
+.voltar {
     text-decoration: none;
     font-family: 'montserrat';
     font-size: 16px;
@@ -555,8 +574,7 @@ height: 2.995rem;
     color: #212121
 }
 
-.ancora-prontuario
-{
+.ancora-prontuario {
     margin-left: 24px;
     font-family: 'Comfortaa';
     font-size: 16px;
@@ -565,14 +583,12 @@ height: 2.995rem;
 }
 
 
-.pesquisar-prontuario
-{
+.pesquisar-prontuario {
     margin-top: 28px;
     margin-right: 200px;
 }
 
-.pesquisar input
-{
+.pesquisar input {
     width: 504px;
     height: 48px;
     border: 1px solid #BDBDBD;
@@ -580,8 +596,7 @@ height: 2.995rem;
     margin-right: 0px;
 }
 
-.pesquisar button
-{
+.pesquisar button {
     background: #00995D;
     color: #ffffff;
     width: 125px;
@@ -589,7 +604,7 @@ height: 2.995rem;
     border-radius: 0px 30px 30px 0px;
 }
 
-.dataProntuario{
+.dataProntuario {
     font-family: 'Montserrat';
     font-weight: 400;
     font-size: 14px;
@@ -597,7 +612,7 @@ height: 2.995rem;
     color: #616161;
 }
 
-.corpoProntuario{
+.corpoProntuario {
     font-family: 'Montserrat';
     font-weight: 400;
     font-size: 16px;
@@ -605,11 +620,11 @@ height: 2.995rem;
     color: #424242;
 }
 
-.dropdown-menu button:hover{
+.dropdown-menu button:hover {
     background-color: transparent;
 }
 
-.btn-prontuario{
+.btn-prontuario {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -617,19 +632,19 @@ height: 2.995rem;
     line-height: 27px;
 }
 
-.btn-prontuario img{
+.btn-prontuario img {
     margin-right: 5px;
 }
 
-#dataFato{
+#dataFato {
     width: 182px;
     height: 48px;
     margin-top: 12px;
     border: 1px solid #BDBDBD;
-    border-radius: 8px; 
+    border-radius: 8px;
 }
 
-#tituloFato{
+#tituloFato {
     width: 380px;
     height: 48px;
     margin-top: 12px;
@@ -637,7 +652,7 @@ height: 2.995rem;
     border-radius: 8px;
 }
 
-#ocorridoFato{
+#ocorridoFato {
     width: 589px;
     height: 153px;
     margin-top: 12px;
@@ -645,7 +660,7 @@ height: 2.995rem;
     border-radius: 8px;
 }
 
-.textFato{
+.textFato {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -653,8 +668,96 @@ height: 2.995rem;
     line-height: 17px;
 }
 
-.border-modal{
+.border-modal {
     border: 1px solid #BDBDBD;
     border-radius: 8px;
     height: 48px;
+}
+
+#voltar-prontuario {
+    border-style: none;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    background-color: #ffffff;
+    width: 100%;
+    height: 48px;
+    margin-top: 10px;
+    margin-left: 80px;
+}
+
+.bg-sessao {
+    width: 924px;
+    height: auto;
+    background-color: #FFFFFF;
+    margin-left: 140px;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.tituloSessao {
+    font-family: 'Comfortaa';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+    color: #4f4f4f;
+    margin-top: 24px;
+    margin-left: 130px;
+}
+
+.roda-sessao {
+
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #757575;
+}
+
+.title-sessao {
+
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 0;
+    color: #000000;
+}
+
+#dataSessao {
+
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    color: #616161;
+
+}
+
+#resumoSessao {
+
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    color: #424242;
+}
+
+.pagamento {
+
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #000000;
+
+}
+
+#voltar-prontuario a {
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #4f4f4f;
 }

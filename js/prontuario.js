@@ -6,6 +6,11 @@ let paciente;
 let sessao;
 let verlinha = 0
 
+//Verifica se existe algum usuário logado, caso não encontre reencaminha para a tela de login.
+if (idUser === null) {
+    window.location.href = "index.html"
+}
+
 //Função que faz a leitura dos inputs do modal de sessão e chama a função de encaminhar esses dados para o banco de dados.
 document.getElementById("sessaoModal").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -46,7 +51,7 @@ async function getPaciente(id) {
     const response = await fetch(`http://localhost:3000/pacientes?id=` + id);
     const pacienteresponse = await response.json();
     paciente = await pacienteresponse[0];
-    return(paciente);
+    return (paciente);
 }
 
 //Função que atualiza os dados do paciente no formulário lateral.
@@ -180,7 +185,7 @@ const addCard = async () => {
                 resumo = resumoOriginal;
             }
 
-            const dadosCard = `<a href="./sessao.html?id=${card[i].id}" style="text-decoration:none" class="p-0 mb-3"><div class="col-12 ">
+            const dadosCard = `<a href="./sessao.html?id=${card[i].id}&&numero=${sessao}" style="text-decoration:none" class="p-0 mb-3"><div class="col-12 ">
             <div class="container-fluid cardProntuario" style = "border-color:#00995D">
             
                 <div class="row d-flex ">
@@ -293,12 +298,12 @@ document.querySelectorAll('.horario-input').forEach(function (input) {
 });
 
 //Remove os dados do usuário do armazenamento do navegador e o encaminha para a tela de login.
-document.getElementById("logout").addEventListener("click", function(e){
+document.getElementById("logout").addEventListener("click", function (e) {
     e.preventDefault();
     sessionStorage.removeItem("logged");
     window.location.href = "index.html";
+})
 
-  })
 
 addCard(); //Chama a função que imprime na tela os cards de sessão e prontuario.
 attHeader(); //Chama a função que atualiza o cabeçalho com os dados do usuario. 

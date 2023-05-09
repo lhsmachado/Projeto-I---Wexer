@@ -24,7 +24,6 @@ document.getElementById("form-login").addEventListener("submit", async function 
     const idSerial = JSON.stringify(id)
     sessionStorage.setItem("logged", idSerial);
     window.location.href = "home.html"
-   
 })
 
 //Faz a busca no banco de dados para verificar se existe um usuário com o email fornecido.
