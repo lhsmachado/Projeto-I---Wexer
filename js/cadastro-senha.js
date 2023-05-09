@@ -32,7 +32,7 @@ document.getElementById('form-cadastro').addEventListener('submit', async functi
 
 //Função que salva o usuário no banco de dados.
 async function salvaUsuario(user) {
-    await fetch(`http://localhost:3000/cadastros`, {
+    await fetch(`https://banco-de-dados-wexer.onrender.com/cadastros`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

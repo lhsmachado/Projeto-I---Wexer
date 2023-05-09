@@ -12,7 +12,7 @@ if(idUser === null){
 
 //Busca os dados do usuário no banco de dados através do id fornecido pelo login.
 const getUser = async (id) => {
-  const response = await fetch(`http://localhost:3000/cadastros?id=` + id);
+  const response = await fetch(`https://banco-de-dados-wexer.onrender.com/cadastros?id=` + id);
   const user = response.json();
   return (user);
 
@@ -21,7 +21,7 @@ const getUser = async (id) => {
 //Busca a lista de pacientes do usuário no banco de dados.
 const getPacientes = async () => {
   try {
-    const response = await fetch(`http://localhost:3000/pacientes?idPsicologo=` + idUser);
+    const response = await fetch(`https://banco-de-dados-wexer.onrender.com/pacientes?idPsicologo=` + idUser);
     const pacientes = await response.json();
     return (pacientes);
 
@@ -33,7 +33,7 @@ const getPacientes = async () => {
 //Busca uma lista de pacientes filtrada pela pesquisa do usuário.
 const getPacientesFilter = async (data) => {
   try {
-    const response = await fetch(`http://localhost:3000/pacientes?q=` + data);
+    const response = await fetch(`https://banco-de-dados-wexer.onrender.com/pacientes?q=` + data);
     const pacientes = await response.json();
     return (pacientes);
 
@@ -87,7 +87,7 @@ document.getElementById('cpf').addEventListener('input', function (event) {
 
 //Adiciona o paciente no banco de dados.
 const addPaciente = async (user) => {
-  await fetch(`http://localhost:3000/pacientes`, {
+  await fetch(`https://banco-de-dados-wexer.onrender.com/pacientes`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const addPaciente = async (user) => {
 
 //Atualiza os dados de um paciente no banco de dados.
 const attPaciente = async (dados) => {
-  await fetch(`http://localhost:3000/pacientes/${idEditar}`, {
+  await fetch(`https://banco-de-dados-wexer.onrender.com/pacientes/${idEditar}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ function adicionarEventosDeClique() {
 
 //Cria um modal com os dados do paciente para serem editados.
 const editarPaciente = async (id) => {
-  const response = await fetch(`http://localhost:3000/pacientes?id=` + id);
+  const response = await fetch(`https://banco-de-dados-wexer.onrender.com/pacientes?id=` + id);
   const pacienteresponse = await response.json();
   const paciente = pacienteresponse[0];
   idEditar = id;
@@ -228,7 +228,7 @@ const editarPaciente = async (id) => {
 //Deleta um paciente no banco de dados.
 const deletarPaciente = async (id) => {
 
-  await fetch(`http://localhost:3000/pacientes/` + id, {
+  await fetch(`https://banco-de-dados-wexer.onrender.com/pacientes/` + id, {
     method: "DELETE"
   });
   window.location.reload();
@@ -296,7 +296,7 @@ attHeader();
 //Cria um modal com os dados do paciente, porém com os campos desabilitados.
 const mostrarPaciente = async (id) => {
 
-  const response = await fetch(`http://localhost:3000/pacientes?id=` + id);
+  const response = await fetch(`https://banco-de-dados-wexer.onrender.com/pacientes?id=` + id);
   const pacienteresponse = await response.json();
   const paciente = pacienteresponse[0]
   console.log(paciente)

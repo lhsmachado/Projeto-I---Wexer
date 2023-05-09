@@ -1,5 +1,5 @@
 //Função que recebe os dados fornecidos pelo usuário.
-document.getElementById("form-cadastro").addEventListener("submit", function(e) {
+document.getElementById("form-cadastro").addEventListener("submit", async function(e) {
     e.preventDefault()
 
     const nome = document.getElementById("cadastro-nome").value;  //Leitura do nome digitado.
@@ -11,7 +11,7 @@ document.getElementById("form-cadastro").addEventListener("submit", function(e) 
         return;
     }
 
-    const verifyEmail = getEmail(email) //Busca no banco de dados se já existe um usuário com o email fornecido.
+    const verifyEmail =  await getEmail(email) //Busca no banco de dados se já existe um usuário com o email fornecido.
 
     //Faz a verificação se existe algum usuário com o email fornecido, caso sim retorna um erro ao usuário.
     if(verifyEmail.length !== 0){
@@ -39,8 +39,9 @@ function cadastroEmail(data){
 //Faz a busca no banco de dados para verificar se existe um usuário com o email fornecido.
 const getEmail = async (email) => {
     try {
-        const apiResponse = await fetch('http://localhost:3000/cadastros?email=' + email);
+        const apiResponse = await fetch('https://banco-de-dados-wexer.onrender.com/cadastros?email=' + email);
         const response = await apiResponse.json();
+        console.log(response)
         return (response);
     }
     catch (error) {

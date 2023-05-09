@@ -48,7 +48,7 @@ document.getElementById("fatoModal").addEventListener("submit", (e) => {
 
 //Função que faz a requisição no banco de dados das informações do paciente.
 async function getPaciente(id) {
-    const response = await fetch(`http://localhost:3000/pacientes?id=` + id);
+    const response = await fetch(`https://banco-de-dados-wexer.onrender.com/pacientes?id=` + id);
     const pacienteresponse = await response.json();
     paciente = await pacienteresponse[0];
     return (paciente);
@@ -71,7 +71,7 @@ async function attprontuario() {
 
 //Função que envia para o banco de dados a sessão/fato cadastrado.
 async function enviaSessao(data) {
-    await fetch(`http://localhost:3000/prontuario`, {
+    await fetch(`https://banco-de-dados-wexer.onrender.com/prontuario`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ async function enviaSessao(data) {
 
 //Função que faz a requisição dos dados do prontuário.
 async function getCard(id) {
-    const response = await fetch(`http://localhost:3000/prontuario?paciente=` + id);
+    const response = await fetch(`https://banco-de-dados-wexer.onrender.com/prontuario?paciente=` + id);
     const cardResponse = await response.json();
     const card = await cardResponse
     return (card);
@@ -238,7 +238,7 @@ const addCard = async () => {
 
 //Função que faz a requisição dos dados do usuário no banco de dados.
 const getUser = async (id) => {
-    const response = await fetch(`http://localhost:3000/cadastros?id=` + id);
+    const response = await fetch(`https://banco-de-dados-wexer.onrender.com/cadastros?id=` + id);
     const user = response.json();
     return (user);
     console.log(user)

@@ -4,17 +4,19 @@ document.getElementById("form-login").addEventListener("submit", async function 
 
     const email = document.getElementById("email-input").value; //Leitura do email digitado
     const password = document.getElementById("password-input").value; //Leitura da senha digitada
-
+    console.log(password)
     const user = await getemail(email); //Busca no banco de dados se o email fornecido existe no banco de dados.
-
+  
     //Verifica se foi retornado algum usuario, caso a variavel esteja vazia, retorna um erro ao usuario.
     if(user.length === 0){
         alert("Email ou senha inválidos.")
+        
         return;
     }
 
     //Verifica se a senha confere com a armazenada, caso elas não estejam iguais retorna um erro ao usuário.
-    if(user[0].password !== password){
+    if(user[0].senha !== password){
+        console.log(user[0].password)
         alert("Email ou senha inválidos.")
         return;
     }
@@ -29,7 +31,7 @@ document.getElementById("form-login").addEventListener("submit", async function 
 //Faz a busca no banco de dados para verificar se existe um usuário com o email fornecido.
 const getemail = async (email) => {
     try {
-        const apiResponse = await fetch('http://localhost:3000/cadastros?email=' + email);
+        const apiResponse = await fetch('https://banco-de-dados-wexer.onrender.com/cadastros?email=' + email);
         const response = await apiResponse.json();
         return (response);
     }

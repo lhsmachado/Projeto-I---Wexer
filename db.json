@@ -4,27 +4,40 @@
       "id": 1,
       "nome": "Luis Machado",
       "email": "luis@teste",
-      "password": "12345"
+      "senha": "12345"
     },
     {
       "id": 2,
       "nome": "Charles Fischer",
       "email": "charles@teste",
-      "password": "12345"
+      "senha": "12345"
     },
     {
       "nome": "Juliana Ferreira",
       "email": "juliana@teste",
       "senha": "12345",
       "id": 3
+    },
+    {
+      "nome": "Marcio",
+      "email": "marcio@teste",
+      "senha": "12345",
+      "id": 4
+    },
+    {
+      "nome": "Arthur",
+      "email": "arthur@arnia",
+      "senha": "12345",
+      "pacientes": [],
+      "id": 5
     }
   ],
   "pacientes": [
     {
-      "id": "1",
+      "id": 1,
       "cpf": "832.710.160-72",
       "nome": "Pedro",
-      "nascimento": "15/03/1987",
+      "nascimento": "2000-12-20",
       "email": "lucas@hotmail.com",
       "genero": "1",
       "nacionalidade": "Brasileira",
@@ -37,7 +50,7 @@
       "idPsicologo": 1
     },
     {
-      "id": "2",
+      "id": 2,
       "cpf": "084.458.780-08",
       "nome": "Ana",
       "nascimento": "18/06/1992",
@@ -53,7 +66,7 @@
       "idPsicologo": 1
     },
     {
-      "id": "3",
+      "id": 3,
       "cpf": "567.801.410-01",
       "nome": "Fernando",
       "nascimento": "25/11/2000",
@@ -69,7 +82,7 @@
       "idPsicologo": 1
     },
     {
-      "id": "4",
+      "id": 4,
       "cpf": "144.835.830-08",
       "nome": "Carla",
       "nascimento": "09/02/1985",
@@ -85,7 +98,7 @@
       "idPsicologo": 2
     },
     {
-      "id": "5",
+      "id": 5,
       "cpf": "032.654.200-46",
       "nome": "Bruno",
       "nascimento": "30/08/1994",
@@ -101,7 +114,7 @@
       "idPsicologo": 2
     },
     {
-      "id": "6",
+      "id": 6,
       "cpf": "966.277.460-03",
       "nome": "Juliana",
       "nascimento": "05/01/1998",
@@ -117,7 +130,7 @@
       "idPsicologo": 2
     },
     {
-      "id": "7",
+      "id": 7,
       "cpf": "357.188.150-99",
       "nome": "Gabriel",
       "nascimento": "12/12/1993",
@@ -133,7 +146,7 @@
       "idPsicologo": 2
     },
     {
-      "id": "8",
+      "id": 8,
       "cpf": "669.837.670-81",
       "nome": "Larissa",
       "nascimento": "20/07/2000",
@@ -149,7 +162,7 @@
       "idPsicologo": 1
     },
     {
-      "id": "9",
+      "id": 9,
       "cpf": "746.491.980-20",
       "nome": "Rafael",
       "nascimento": "03/04/1991",
@@ -165,7 +178,7 @@
       "idPsicologo": 2
     },
     {
-      "id": "10",
+      "id": 10,
       "cpf": "889.072.670-43",
       "nome": "Marina",
       "nascimento": "08/11/1997",
@@ -309,6 +322,46 @@
       "tipo": "sessao",
       "paciente": 1,
       "id": 12
+    },
+    {
+      "data": "10/12/2023",
+      "inicio": "15:20",
+      "fim": "16:20",
+      "titulo": "Titulo Sessao",
+      "resumo": "Isso é um resumo de sessão",
+      "valor": "R$150,00",
+      "pagamento": "2",
+      "tipo": "sessao",
+      "paciente": "1",
+      "id": 13
+    },
+    {
+      "data": "24/03/2023",
+      "titulo": "Teste",
+      "ocorrido": "Teste fato relevante",
+      "tipo": "fato",
+      "paciente": "1",
+      "id": 14
+    },
+    {
+      "data": "12/12/1221",
+      "inicio": "12:12",
+      "fim": "21:21",
+      "titulo": "teste",
+      "resumo": "teste",
+      "valor": "",
+      "pagamento": "",
+      "tipo": "sessao",
+      "paciente": "1",
+      "id": 15
+    },
+    {
+      "data": "12/21/2121",
+      "titulo": "212121",
+      "ocorrido": "Teste",
+      "tipo": "fato",
+      "paciente": "1",
+      "id": 16
     }
   ]
 }

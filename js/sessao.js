@@ -11,7 +11,7 @@ if (idUser === null) {
 
 //Função que faz a requisição dos dados do usuário no banco de dados.
 const getUser = async (id) => {
-    const response = await fetch(`http://localhost:3000/cadastros?id=` + id);
+    const response = await fetch(`https://banco-de-dados-wexer.onrender.com/cadastros?id=` + id);
     const user = response.json();
     return (user);
 }
@@ -31,7 +31,7 @@ const attHeader = async () => {
 
 //Funçao que busca no banco de dados as informações da sessão
 const getSessao = async (id) => {
-    const response = await fetch(`http://localhost:3000/prontuario?id=` + id);
+    const response = await fetch(`https://banco-de-dados-wexer.onrender.com/prontuario?id=` + id);
     const sessao = response.json();
     return (sessao);
 }
@@ -63,7 +63,7 @@ const addSessao = async () => {
     document.getElementById("voltar-prontuario").innerHTML = ` <a href="./prontuario.html?id=${sessao.paciente}"> <img src="./image/arrow-ios-left.svg" alt="">Voltar</a>`
 }
 
-//Função de logout
+//Função de logou
 document.getElementById("logout").addEventListener("click", function (e) {
     e.preventDefault();
     sessionStorage.removeItem("logged");
